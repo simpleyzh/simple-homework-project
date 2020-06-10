@@ -1,4 +1,4 @@
-package app.user.demo;
+package app.demo.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,6 @@ public class Brush {
     private final Logger logger = LoggerFactory.getLogger(Brush.class);
 
     public void print() {
-        System.out.println("Hello World");
+        logger.info("Hello World");
     }
 }

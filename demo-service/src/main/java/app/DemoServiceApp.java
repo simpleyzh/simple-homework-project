@@ -5,9 +5,9 @@ import core.framework.module.App;
 /**
  * @author simple
  */
-public class UserServiceApp extends App {
+public class DemoServiceApp extends App {
     @Override
     protected void initialize() {
-        load(new UserModule());
+        load(new DemoModule());
     }
 }
