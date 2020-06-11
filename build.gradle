@@ -30,16 +30,31 @@ def jacksonVersion = '2.10.3'
 def mysqlVersion = '8.0.20'
 
 
+configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
+    apply from: file("${rootDir}/gradle/db-migration.gradle")
+
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+    }
+}
+
+configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+    tasks.register('mongoMigrate') {
+        dependsOn run
+    }
+}
+
 configure(project(':demo-service')) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
         testImplementation "core.framework:core-ng-test:${coreNGVersion}"
-    }
-}
-
-project(':demo-service') {
-    dependencies {
     }
 }
 
