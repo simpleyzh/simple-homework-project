@@ -1,5 +1,6 @@
 package app.bo.customer;
 
+import app.api.BOCustomerWebService;
 import app.bo.customer.service.BOCustomService;
 import app.bo.customer.web.CustomAjaxWebServiceImpl;
 import core.framework.module.Module;
@@ -15,5 +16,6 @@ public class CustomerModule extends Module {
 
         http().httpPort(8080);
         api().service(CustomerAjaxWebService.class,bean(CustomAjaxWebServiceImpl.class));
+        api().client(BOCustomerWebService.class, "localhost:8080");
     }
 }
