@@ -1,7 +1,7 @@
 package app.bo.customer;
 
 import app.api.BOCustomerWebService;
-import app.bo.customer.service.BOCustomService;
+import app.bo.customer.service.CustomService;
 import app.bo.customer.web.CustomAjaxWebServiceImpl;
 import core.framework.module.Module;
 
@@ -11,11 +11,10 @@ import core.framework.module.Module;
 public class CustomerModule extends Module {
     @Override
     protected void initialize() {
-        bind(BOCustomService.class);
+        bind(CustomService.class);
         bind(CustomAjaxWebServiceImpl.class);
-
-        http().httpPort(8080);
+        http().httpPort(8081);
         api().service(CustomerAjaxWebService.class,bean(CustomAjaxWebServiceImpl.class));
-        api().client(BOCustomerWebService.class, "localhost:8080");
+//        api().client(BOCustomerWebService.class, requiredProperty("host"));
     }
 }

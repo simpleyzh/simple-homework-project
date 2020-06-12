@@ -13,7 +13,7 @@ import core.framework.inject.Inject;
 /**
  * @author simple
  */
-public class BOCustomService {
+public class CustomService {
     @Inject
     BOCustomerWebService customerWebService;
 
