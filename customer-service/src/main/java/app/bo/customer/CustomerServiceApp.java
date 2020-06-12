@@ -1,4 +1,4 @@
-package app.customer;
+package app.bo.customer;
 
 import core.framework.module.App;
 import core.framework.module.SystemModule;

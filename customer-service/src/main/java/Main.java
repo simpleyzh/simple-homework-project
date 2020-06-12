@@ -1,4 +1,4 @@
-import app.customer.CustomerServiceApp;
+import app.bo.customer.CustomerServiceApp;
 
 /**
  * @author simple
