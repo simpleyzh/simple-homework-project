@@ -1,14 +1,14 @@
-package app.customer.web;
+package app.bo.customer.web;
 
 
 
 import app.api.BOCreateCustomerRequest;
-import app.api.BOCustomerView;
-import app.customer.CustomerAjaxWebService;
+import app.api.CustomerView;
+import app.bo.customer.service.BOCustomService;
+import app.bo.customer.CustomerAjaxWebService;
 import app.api.BOSearchCustomerRequest;
 import app.api.BOSearchCustomerResponse;
 import app.api.BOUpdateCustomerRequest;
-import app.customer.service.BOCustomService;
 import core.framework.inject.Inject;
 
 
@@ -20,12 +20,12 @@ public class CustomAjaxWebServiceImpl implements CustomerAjaxWebService {
     BOCustomService service;
     
     @Override
-    public BOCustomerView createCustomer(BOCreateCustomerRequest request) {
+    public CustomerView createCustomer(BOCreateCustomerRequest request) {
         return service.createCustomer(request);
     }
 
     @Override
-    public BOCustomerView getCustomer(String id) {
+    public CustomerView getCustomer(String id) {
         return service.getCustomer(id);
     }
 
@@ -35,7 +35,7 @@ public class CustomAjaxWebServiceImpl implements CustomerAjaxWebService {
     }
 
     @Override
-    public BOCustomerView updateCustomer(BOUpdateCustomerRequest request) {
+    public CustomerView updateCustomer(BOUpdateCustomerRequest request) {
         return service.updateCustomer(request);
     }
 

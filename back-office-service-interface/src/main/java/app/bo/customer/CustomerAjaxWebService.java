@@ -1,10 +1,10 @@
-package app.customer;
+package app.bo.customer;
 
 import app.api.BOCreateCustomerRequest;
-import app.api.BOCustomerView;
 import app.api.BOSearchCustomerRequest;
 import app.api.BOSearchCustomerResponse;
 import app.api.BOUpdateCustomerRequest;
+import app.api.CustomerView;
 import core.framework.api.web.service.DELETE;
 import core.framework.api.web.service.GET;
 import core.framework.api.web.service.POST;
@@ -18,11 +18,11 @@ import core.framework.api.web.service.PathParam;
 public interface CustomerAjaxWebService {
     @POST
     @Path("/ajax/customer/d")
-    BOCustomerView createCustomer(BOCreateCustomerRequest request);
+    CustomerView createCustomer(BOCreateCustomerRequest request);
 
     @GET
     @Path("/customer/:id")
-    BOCustomerView getCustomer(@PathParam("id") String id);
+    CustomerView getCustomer(@PathParam("id") String id);
 
     @PUT
     @Path("/customer")
@@ -30,7 +30,7 @@ public interface CustomerAjaxWebService {
 
     @POST
     @Path("/customer")
-    BOCustomerView updateCustomer(BOUpdateCustomerRequest request);
+    CustomerView updateCustomer(BOUpdateCustomerRequest request);
 
     @DELETE
     @Path("/customer/:id/d")

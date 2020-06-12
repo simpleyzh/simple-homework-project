@@ -1,7 +1,7 @@
-package app.customer;
+package app.bo.customer;
 
-import app.customer.service.BOCustomService;
-import app.customer.web.CustomAjaxWebServiceImpl;
+import app.bo.customer.service.BOCustomService;
+import app.bo.customer.web.CustomAjaxWebServiceImpl;
 import core.framework.module.Module;
 
 /**

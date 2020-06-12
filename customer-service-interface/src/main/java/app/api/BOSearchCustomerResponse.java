@@ -9,5 +9,5 @@ import java.util.List;
  */
 public class BOSearchCustomerResponse {
     @Property(name = "views")
-    public List<BOCustomerView> customerViews;
+    public List<CustomerView> customerViews;
 }

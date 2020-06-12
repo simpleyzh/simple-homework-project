@@ -1,11 +1,15 @@
-package app.customer.service;
+package app.bo.customer.service;
 
+import app.api.BOCreateCustomerRequest;
+import app.api.BOSearchCustomerRequest;
+import app.api.BOSearchCustomerResponse;
+import app.api.BOUpdateCustomerRequest;
 import app.api.CreateCustomerRequest;
 import app.api.CustomerView;
 import app.api.SearchCustomerRequest;
 import app.api.SearchCustomerResponse;
 import app.api.UpdateCustomerRequest;
-import app.customer.domain.Customer;
+import app.bo.customer.domain.Customer;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
 
@@ -31,7 +35,27 @@ public class CustomerService {
         return view(repository.get(customer.id).get());
     }
 
+    public CustomerView createCustomer(BOCreateCustomerRequest request) {
+        Customer customer = new Customer();
+        customer.id = UUID.randomUUID().toString();
+        customer.name = request.name;
+        customer.age = request.age;
+        customer.email = request.email;
+        customer.sex = request.sex;
+        repository.insert(customer);
+        return view(repository.get(customer.id).get());
+    }
+
     public CustomerView updateCustomer(UpdateCustomerRequest request) {
+        Customer customer = new Customer();
+        customer.id = request.id;
+        customer.name = request.name;
+        customer.email = request.email;
+        repository.partialUpdate(customer);
+        return view(repository.get(customer.id).get());
+    }
+
+    public CustomerView updateCustomer(BOUpdateCustomerRequest request) {
         Customer customer = new Customer();
         customer.id = request.id;
         customer.name = request.name;
@@ -54,7 +78,18 @@ public class CustomerService {
         }
         searchCustomerResponse.customerViews = list1;
         return searchCustomerResponse;
+    }
 
+    public BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request) {
+        List<Customer> list = repository.select("name = ?", request.name);
+        BOSearchCustomerResponse searchCustomerResponse = new BOSearchCustomerResponse();
+        List<CustomerView> list1 = new ArrayList<>(10);
+        for (Customer c : list) {
+            CustomerView view = view(c);
+            list1.add(view);
+        }
+        searchCustomerResponse.customerViews = list1;
+        return searchCustomerResponse;
     }
 
     public void deleteCustomer(String id) {
