@@ -13,15 +13,15 @@ subprojects {
         }
     }
 
-    sourceSets {
-        dev {
-            java {
-                srcDir 'src/dev/java'
-            }
-            compileClasspath += sourceSets.main.runtimeClasspath
-            runtimeClasspath += sourceSets.main.runtimeClasspath
-        }
-    }
+//    sourceSets {
+//        dev {
+//            java {
+//                srcDir 'src/dev/java'
+//            }
+//            compileClasspath += sourceSets.main.runtimeClasspath
+//            runtimeClasspath += sourceSets.main.runtimeClasspath
+//        }
+//    }
 }
 
 def coreNGVersion = '7.4.1'
@@ -50,17 +50,48 @@ configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
     }
 }
 
-configure([project(':demo-service'),project(':db-service')]) {
+configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
+    dependencies {
+        implementation "core.framework:core-ng-api:${coreNGVersion}"
+        implementation "core.framework:core-ng:${coreNGVersion}"
+    }
+}
+
+configure([project(':demo-service'),
+           project(':db-service'),
+           project(':back-office-service'),
+           project(':customer-service')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
         testImplementation "core.framework:core-ng-test:${coreNGVersion}"
     }
 }
+
+configure(project(':customer-service')) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation project(':customer-service-interface')
+        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+    }
+}
 project(':db-service') {
     dependencies {
         runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+}
+
+project(':back-office-service') {
+    dependencies {
+        implementation project(':customer-service-interface')
+        implementation project(':back-office-service-interface')
+    }
+}
+
+project(':back-office-service-interface') {
+    dependencies {
+        implementation project(':customer-service-interface')
     }
 }
 //configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
