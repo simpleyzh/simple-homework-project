@@ -50,14 +50,19 @@ configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
     }
 }
 
-configure(project(':demo-service')) {
+configure([project(':demo-service'),project(':db-service')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
         testImplementation "core.framework:core-ng-test:${coreNGVersion}"
     }
 }
-
+project(':db-service') {
+    dependencies {
+        runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+}
 //configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
 //    apply from: file("${rootDir}/gradle/db-migration.gradle")
 //
