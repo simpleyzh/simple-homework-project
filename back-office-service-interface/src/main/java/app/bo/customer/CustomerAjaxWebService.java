@@ -21,18 +21,18 @@ public interface CustomerAjaxWebService {
     CustomerView createCustomer(BOCreateCustomerRequest request);
 
     @GET
-    @Path("/customer/:id")
+    @Path("/ajax/customer/:id")
     CustomerView getCustomer(@PathParam("id") String id);
 
     @PUT
-    @Path("/customer")
+    @Path("/ajax/customer")
     BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request);
 
     @POST
-    @Path("/customer")
+    @Path("/ajax/customer")
     CustomerView updateCustomer(BOUpdateCustomerRequest request);
 
     @DELETE
-    @Path("/customer/:id/d")
+    @Path("/ajax/customer/:id/d")
     void deleteCustomer(@PathParam("id") String id);
 }
