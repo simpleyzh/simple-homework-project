@@ -14,7 +14,7 @@ import core.framework.api.web.service.PathParam;
 /**
  * @author simple
  */
-public interface CustomerAjaxWebService {
+public interface CustomerAJAXWebService {
     @POST
     @Path("/ajax/customer/d")
     CustomerAJAXView createCustomer(CustomerAJAXView request);
