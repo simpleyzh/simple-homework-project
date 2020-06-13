@@ -15,7 +15,7 @@ public class CustomerModule extends Module {
         bind(CustomService.class);
 //        bind(CustomAjaxWebServiceImpl.class);
         http().httpPort(8081);
-        api().service(CustomerAjaxWebService.class,bean(CustomAjaxWebServiceImpl.class));
+        api().service(CustomerAjaxWebService.class, bean(CustomAjaxWebServiceImpl.class));
         api().client(BOCustomerWebService.class, requiredProperty("app.customer.serviceURL"));
     }
 }

@@ -3,7 +3,6 @@ package app.bo.customer.web;
 
 
 import app.bo.customer.api.CustomerAJAXView;
-import app.customer.api.CustomerView;
 import app.bo.customer.service.CustomService;
 import app.bo.customer.api.CustomerAjaxWebService;
 import app.customer.api.BOSearchCustomerRequest;

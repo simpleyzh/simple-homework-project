@@ -15,7 +15,6 @@ public class BOCustomerWebServiceImpl implements BOCustomerWebService {
     @Inject
     CustomerService service;
 
-
     @Override
     public CustomerView createCustomer(CustomerView request) {
         return service.createCustomer(request);

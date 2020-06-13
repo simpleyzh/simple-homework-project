@@ -11,9 +11,11 @@ import app.customer.domain.Customer;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
 import core.framework.web.exception.ConflictException;
+import core.framework.web.exception.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -24,8 +26,8 @@ public class CustomerService {
     Repository<Customer> repository;
 
     public CustomerView createCustomer(CustomerView request) {
-        if (repository.selectOne("id = ?",request.id).isPresent()) {
-            throw new ConflictException(String.format("customer id is exist,id = {}",request.id));
+        if (repository.selectOne("id = ?", request.id).isPresent()) {
+            throw new ConflictException("customer id is exist,id = " + request.id);
         } else {
             Customer customer = new Customer();
             customer.id = UUID.randomUUID().toString();
@@ -34,7 +36,7 @@ public class CustomerService {
             customer.email = request.email;
             customer.sex = request.sex;
             repository.insert(customer);
-            return view(repository.get(customer.id).get());
+            return view(get(request.id));
         }
     }
 
@@ -44,7 +46,7 @@ public class CustomerService {
         customer.name = request.name;
         customer.email = request.email;
         repository.partialUpdate(customer);
-        return view(repository.get(customer.id).get());
+        return view(get(request.id));
     }
 
     public CustomerView updateCustomer(BOUpdateCustomerRequest request) {
@@ -53,11 +55,11 @@ public class CustomerService {
         customer.name = request.name;
         customer.email = request.email;
         repository.partialUpdate(customer);
-        return view(repository.get(customer.id).get());
+        return view(get(request.id));
     }
 
     public CustomerView getCustomer(String id) {
-        return view(repository.get(id).get());
+        return view(get(id));
     }
 
     public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
@@ -96,5 +98,11 @@ public class CustomerService {
         view.sex = customer.sex;
         view.email = customer.email;
         return view;
+    }
+
+    private Customer get(String id) {
+        Optional<Customer> customer = repository.get(id);
+        customer.orElseThrow(() -> new NotFoundException("Id is not found. Id is" + id));
+        return customer.get();
     }
 }
