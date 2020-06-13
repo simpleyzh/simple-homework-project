@@ -1,4 +1,4 @@
-import app.bo.customer.BackOfficeApp;
+import app.BackOfficeApp;
 
 /**
  * @author simple

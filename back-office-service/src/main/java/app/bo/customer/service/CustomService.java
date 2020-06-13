@@ -1,12 +1,12 @@
 package app.bo.customer.service;
 
 
-import app.api.BOCreateCustomerRequest;
-import app.api.BOCustomerWebService;
-import app.api.BOSearchCustomerRequest;
-import app.api.BOSearchCustomerResponse;
-import app.api.BOUpdateCustomerRequest;
-import app.api.CustomerView;
+import app.customer.api.BOCreateCustomerRequest;
+import app.customer.api.BOCustomerWebService;
+import app.customer.api.BOSearchCustomerRequest;
+import app.customer.api.BOSearchCustomerResponse;
+import app.customer.api.BOUpdateCustomerRequest;
+import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
 
 

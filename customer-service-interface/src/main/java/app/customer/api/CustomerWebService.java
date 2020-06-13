@@ -1,4 +1,4 @@
-package app.api;
+package app.customer.api;
 
 import core.framework.api.web.service.DELETE;
 import core.framework.api.web.service.GET;

@@ -1,12 +1,12 @@
-package app.bo.customer.web;
+package app.customer.web;
 
-import app.api.CreateCustomerRequest;
-import app.api.CustomerView;
-import app.api.CustomerWebService;
-import app.api.SearchCustomerRequest;
-import app.api.SearchCustomerResponse;
-import app.api.UpdateCustomerRequest;
-import app.bo.customer.service.CustomerService;
+import app.customer.api.CreateCustomerRequest;
+import app.customer.api.CustomerView;
+import app.customer.api.CustomerWebService;
+import app.customer.api.SearchCustomerRequest;
+import app.customer.api.SearchCustomerResponse;
+import app.customer.api.UpdateCustomerRequest;
+import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
 
 /**
