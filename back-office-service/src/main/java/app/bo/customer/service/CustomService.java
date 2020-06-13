@@ -9,7 +9,6 @@ import app.customer.api.BOUpdateCustomerRequest;
 import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
 
-
 /**
  * @author simple
  */
