@@ -5,7 +5,7 @@ import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
 /**
- * @Author simple
+ * @author simple
  */
 public class CustomerAJAXView {
     @NotBlank

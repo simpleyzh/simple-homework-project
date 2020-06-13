@@ -1,5 +1,10 @@
+import app.CustomerSiteServiceApp;
+
 /**
- * @Author simple
+ * @author simple
  */
 public class Main {
+    public static void main(String[] args) {
+        new CustomerSiteServiceApp().start();
+    }
 }

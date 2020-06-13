@@ -4,7 +4,7 @@ package app.bo.customer.web;
 
 import app.bo.customer.api.CustomerAJAXView;
 import app.bo.customer.service.CustomService;
-import app.bo.customer.api.CustomerAjaxWebService;
+import app.bo.customer.api.CustomerAJAXWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
@@ -14,7 +14,7 @@ import core.framework.inject.Inject;
 /**
  * @author simple
  */
-public class CustomAjaxWebServiceImpl implements CustomerAjaxWebService {
+public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
     @Inject
     CustomService service;
     

@@ -11,5 +11,6 @@ public class BackOfficeServiceApp extends App {
     protected void initialize() {
         load(new SystemModule("sys.properties"));
         load(new CustomerModule());
+        http().httpPort(8081);
     }
 }
