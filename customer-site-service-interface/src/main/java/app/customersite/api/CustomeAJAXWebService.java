@@ -10,7 +10,7 @@ import core.framework.api.web.service.PathParam;
 /**
  * @author simple
  */
-public interface CustomeAjaxWebService {
+public interface CustomeAJAXWebService {
 
     @GET
     @Path("/customer/:id")

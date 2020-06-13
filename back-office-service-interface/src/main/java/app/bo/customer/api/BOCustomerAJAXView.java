@@ -7,7 +7,7 @@ import core.framework.api.validate.NotNull;
 /**
  * @author simple
  */
-public class CustomerAJAXView {
+public class BOCustomerAJAXView {
     @NotBlank
     @NotNull
     @Property(name = "id")

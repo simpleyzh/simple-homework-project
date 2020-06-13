@@ -4,26 +4,23 @@ package app.bo.customer.web;
 
 import app.bo.customer.api.*;
 import app.bo.customer.service.CustomService;
-import app.customer.api.BOSearchCustomerRequest;
-import app.customer.api.BOSearchCustomerResponse;
-import app.customer.api.BOUpdateCustomerRequest;
 import core.framework.inject.Inject;
 
 
 /**
  * @author simple
  */
-public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
+public class CustomAJAXWebServiceImpl implements BOCustomerAJAXWebService {
     @Inject
     CustomService service;
     
     @Override
-    public CustomerAJAXView createCustomer(CustomerAJAXView request) {
+    public BOCustomerAJAXView createCustomer(BOCustomerAJAXView request) {
         return service.createCustomer(request);
     }
 
     @Override
-    public CustomerAJAXView getCustomer(String id) {
+    public BOCustomerAJAXView getCustomer(String id) {
         return service.getCustomer(id);
     }
 
@@ -33,7 +30,7 @@ public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
     }
 
     @Override
-    public CustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request) {
+    public BOCustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request) {
         return service.updateCustomer(request);
     }
 

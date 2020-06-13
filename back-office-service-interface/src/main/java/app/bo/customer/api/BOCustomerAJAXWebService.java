@@ -11,14 +11,14 @@ import core.framework.api.web.service.PathParam;
 /**
  * @author simple
  */
-public interface CustomerAJAXWebService {
+public interface BOCustomerAJAXWebService {
     @POST
     @Path("/ajax/customer/d")
-    CustomerAJAXView createCustomer(CustomerAJAXView request);
+    BOCustomerAJAXView createCustomer(BOCustomerAJAXView request);
 
     @GET
     @Path("/ajax/customer/:id")
-    CustomerAJAXView getCustomer(@PathParam("id") String id);
+    BOCustomerAJAXView getCustomer(@PathParam("id") String id);
 
     @PUT
     @Path("/ajax/customer")
@@ -26,7 +26,7 @@ public interface CustomerAJAXWebService {
 
     @POST
     @Path("/ajax/customer")
-    CustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request);
+    BOCustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request);
 
     @DELETE
     @Path("/ajax/customer/:id/d")

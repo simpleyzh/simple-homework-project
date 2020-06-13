@@ -1,11 +1,11 @@
 package app.web;
 
-import app.customersite.api.CustomeAjaxWebService;
+import app.customersite.api.CustomeAJAXWebService;
 import app.customersite.api.CustomerAJAXView;
 import app.customersite.api.SearchCustomerAJAXResponse;
 import app.customersite.api.UpdateCustomerAJAXRequest;
 
-public class CustomerAJAXWebServiceImpl implements CustomeAjaxWebService {
+public class CustomerAJAXWebServiceImpl implements CustomeAJAXWebService {
     @Override
     public CustomerAJAXView getCustomer(String id) {
         return null;
