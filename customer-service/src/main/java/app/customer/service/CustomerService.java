@@ -1,15 +1,15 @@
-package app.bo.customer.service;
+package app.customer.service;
 
-import app.api.BOCreateCustomerRequest;
-import app.api.BOSearchCustomerRequest;
-import app.api.BOSearchCustomerResponse;
-import app.api.BOUpdateCustomerRequest;
-import app.api.CreateCustomerRequest;
-import app.api.CustomerView;
-import app.api.SearchCustomerRequest;
-import app.api.SearchCustomerResponse;
-import app.api.UpdateCustomerRequest;
-import app.bo.customer.domain.Customer;
+import app.customer.api.BOCreateCustomerRequest;
+import app.customer.api.BOSearchCustomerRequest;
+import app.customer.api.BOSearchCustomerResponse;
+import app.customer.api.BOUpdateCustomerRequest;
+import app.customer.api.CreateCustomerRequest;
+import app.customer.api.CustomerView;
+import app.customer.api.SearchCustomerRequest;
+import app.customer.api.SearchCustomerResponse;
+import app.customer.api.UpdateCustomerRequest;
+import app.customer.domain.Customer;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
 
