@@ -7,4 +7,7 @@ include 'back-office-service'
 include 'web-site'
 include 'customer-service-interface'
 include 'back-office-service-interface'
+include 'customer-site-service-interface'
+include 'customer-site-service'
+include 'customer-site-service-interface'
 

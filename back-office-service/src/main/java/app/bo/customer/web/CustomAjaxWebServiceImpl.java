@@ -2,7 +2,7 @@ package app.bo.customer.web;
 
 
 
-import app.customer.api.BOCreateCustomerRequest;
+import app.bo.customer.api.CustomerAJAXView;
 import app.customer.api.CustomerView;
 import app.bo.customer.service.CustomService;
 import app.bo.customer.api.CustomerAjaxWebService;
@@ -20,12 +20,12 @@ public class CustomAjaxWebServiceImpl implements CustomerAjaxWebService {
     CustomService service;
     
     @Override
-    public CustomerView createCustomer(BOCreateCustomerRequest request) {
+    public CustomerAJAXView createCustomer(CustomerAJAXView request) {
         return service.createCustomer(request);
     }
 
     @Override
-    public CustomerView getCustomer(String id) {
+    public CustomerAJAXView getCustomer(String id) {
         return service.getCustomer(id);
     }
 
@@ -35,7 +35,7 @@ public class CustomAjaxWebServiceImpl implements CustomerAjaxWebService {
     }
 
     @Override
-    public CustomerView updateCustomer(BOUpdateCustomerRequest request) {
+    public CustomerAJAXView updateCustomer(BOUpdateCustomerRequest request) {
         return service.updateCustomer(request);
     }
 

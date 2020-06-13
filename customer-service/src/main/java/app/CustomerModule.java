@@ -1,8 +1,10 @@
 package app;
 
+import app.customer.api.BOCustomerWebService;
 import app.customer.api.CustomerWebService;
 import app.customer.service.CustomerService;
 import app.customer.domain.Customer;
+import app.customer.web.BOCustomerWebServiceImpl;
 import app.customer.web.CustomerWebServiceImpl;
 import core.framework.module.Module;
 
@@ -14,7 +16,7 @@ public class CustomerModule extends Module {
     protected void initialize() {
         db().repository(Customer.class);
         bind(CustomerService.class);
-        bind(CustomerWebServiceImpl.class);
         api().service(CustomerWebService.class, bean(CustomerWebServiceImpl.class));
+        api().service(BOCustomerWebService.class, bean(BOCustomerWebServiceImpl.class));
     }
 }
