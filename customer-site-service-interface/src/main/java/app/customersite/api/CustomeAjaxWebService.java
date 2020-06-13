@@ -1,7 +1,11 @@
 package app.customersite.api;
 
-import app.customer.api.*;
-import core.framework.api.web.service.*;
+
+import core.framework.api.web.service.GET;
+import core.framework.api.web.service.POST;
+import core.framework.api.web.service.PUT;
+import core.framework.api.web.service.Path;
+import core.framework.api.web.service.PathParam;
 
 /**
  * @Author simple
