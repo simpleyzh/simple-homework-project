@@ -1,10 +1,8 @@
 package app.customer.service;
 
-import app.customer.api.BOCreateCustomerRequest;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
-import app.customer.api.CreateCustomerRequest;
 import app.customer.api.CustomerView;
 import app.customer.api.SearchCustomerRequest;
 import app.customer.api.SearchCustomerResponse;
@@ -12,6 +10,7 @@ import app.customer.api.UpdateCustomerRequest;
 import app.customer.domain.Customer;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
+import core.framework.web.exception.ConflictException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,26 +23,19 @@ public class CustomerService {
     @Inject
     Repository<Customer> repository;
 
-    public CustomerView createCustomer(CreateCustomerRequest request) {
-        Customer customer = new Customer();
-        customer.id = UUID.randomUUID().toString();
-        customer.name = request.name;
-        customer.age = request.age;
-        customer.email = request.email;
-        customer.sex = request.sex;
-        repository.insert(customer);
-        return view(repository.get(customer.id).get());
-    }
-
-    public CustomerView createCustomer(BOCreateCustomerRequest request) {
-        Customer customer = new Customer();
-        customer.id = UUID.randomUUID().toString();
-        customer.name = request.name;
-        customer.age = request.age;
-        customer.email = request.email;
-        customer.sex = request.sex;
-        repository.insert(customer);
-        return view(repository.get(customer.id).get());
+    public CustomerView createCustomer(CustomerView request) {
+        if (repository.selectOne("id = ?",request.id).isPresent()) {
+            throw new ConflictException(String.format("customer id is exist,id = {}",request.id));
+        } else {
+            Customer customer = new Customer();
+            customer.id = UUID.randomUUID().toString();
+            customer.name = request.name;
+            customer.age = request.age;
+            customer.email = request.email;
+            customer.sex = request.sex;
+            repository.insert(customer);
+            return view(repository.get(customer.id).get());
+        }
     }
 
     public CustomerView updateCustomer(UpdateCustomerRequest request) {

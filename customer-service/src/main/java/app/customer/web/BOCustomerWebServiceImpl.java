@@ -1,6 +1,5 @@
 package app.customer.web;
 
-import app.customer.api.BOCreateCustomerRequest;
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
@@ -18,7 +17,7 @@ public class BOCustomerWebServiceImpl implements BOCustomerWebService {
 
 
     @Override
-    public CustomerView createCustomer(BOCreateCustomerRequest request) {
+    public CustomerView createCustomer(CustomerView request) {
         return service.createCustomer(request);
     }
 

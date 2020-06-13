@@ -13,7 +13,7 @@ import core.framework.api.web.service.PathParam;
 public interface CustomerWebService {
     @POST
     @Path("/customer/d")
-    CustomerView createCustomer(CreateCustomerRequest request);
+    CustomerView createCustomer(CustomerView request);
 
     @GET
     @Path("/customer/:id")

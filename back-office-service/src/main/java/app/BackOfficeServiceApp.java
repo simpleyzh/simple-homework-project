@@ -6,7 +6,7 @@ import core.framework.module.SystemModule;
 /**
  * @author simple
  */
-public class BackOfficeApp extends App {
+public class BackOfficeServiceApp extends App {
     @Override
     protected void initialize() {
         load(new SystemModule("sys.properties"));

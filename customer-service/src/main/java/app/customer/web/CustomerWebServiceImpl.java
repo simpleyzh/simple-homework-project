@@ -1,6 +1,5 @@
 package app.customer.web;
 
-import app.customer.api.CreateCustomerRequest;
 import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
 import app.customer.api.SearchCustomerRequest;
@@ -17,7 +16,7 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     CustomerService service;
 
     @Override
-    public CustomerView createCustomer(CreateCustomerRequest request) {
+    public CustomerView createCustomer(CustomerView request) {
         return service.createCustomer(request);
     }
 

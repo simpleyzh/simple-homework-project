@@ -1,10 +1,10 @@
-import app.BackOfficeApp;
+import app.BackOfficeServiceApp;
 
 /**
  * @author simple
  */
 public class Main {
     public static void main(String[] args) {
-        new BackOfficeApp().start();
+        new BackOfficeServiceApp().start();
     }
 }

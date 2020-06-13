@@ -1,13 +1,13 @@
-package app.customer.api;
+package app.bo.customer.api;
 
 import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
 /**
- * @author simple
+ * @Author simple
  */
-public class BOCreateCustomerRequest {
+public class CustomerAJAXView {
     @NotBlank
     @NotNull
     @Property(name = "id")
