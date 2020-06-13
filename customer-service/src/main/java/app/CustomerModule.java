@@ -2,10 +2,10 @@ package app;
 
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.CustomerWebService;
-import app.customer.service.CustomerService;
+import app.service.CustomerService;
 import app.customer.domain.Customer;
-import app.customer.web.BOCustomerWebServiceImpl;
-import app.customer.web.CustomerWebServiceImpl;
+import app.web.BOCustomerWebServiceImpl;
+import app.web.CustomerWebServiceImpl;
 import core.framework.module.Module;
 
 /**

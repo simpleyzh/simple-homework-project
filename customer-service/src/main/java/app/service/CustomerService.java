@@ -1,4 +1,4 @@
-package app.customer.service;
+package app.service;
 
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;

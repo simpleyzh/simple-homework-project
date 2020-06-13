@@ -11,6 +11,6 @@ public class CustomerSiteServiceApp extends App {
     protected void initialize() {
         http().httpPort(8082);
         load(new SystemModule("sys.properties"));
-        load(new CustomerModule());
+        load(new CustomerSiteModule());
     }
 }

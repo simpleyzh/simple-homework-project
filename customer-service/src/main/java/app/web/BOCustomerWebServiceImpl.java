@@ -1,17 +1,17 @@
-package app.customer.web;
+package app.web;
 
+import app.customer.api.BOCustomerWebService;
+import app.customer.api.BOSearchCustomerRequest;
+import app.customer.api.BOSearchCustomerResponse;
+import app.customer.api.BOUpdateCustomerRequest;
 import app.customer.api.CustomerView;
-import app.customer.api.CustomerWebService;
-import app.customer.api.SearchCustomerRequest;
-import app.customer.api.SearchCustomerResponse;
-import app.customer.api.UpdateCustomerRequest;
-import app.customer.service.CustomerService;
+import app.service.CustomerService;
 import core.framework.inject.Inject;
 
 /**
  * @author simple
  */
-public class CustomerWebServiceImpl implements CustomerWebService {
+public class BOCustomerWebServiceImpl implements BOCustomerWebService {
     @Inject
     CustomerService service;
 
@@ -26,12 +26,12 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     }
 
     @Override
-    public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
+    public BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request) {
         return service.searchCustomer(request);
     }
 
     @Override
-    public CustomerView updateCustomer(UpdateCustomerRequest request) {
+    public CustomerView updateCustomer(BOUpdateCustomerRequest request) {
         return service.updateCustomer(request);
     }
 
@@ -39,6 +39,4 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     public void deleteCustomer(String id) {
         service.deleteCustomer(id);
     }
-
-
 }

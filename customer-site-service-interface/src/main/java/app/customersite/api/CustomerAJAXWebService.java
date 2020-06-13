@@ -10,18 +10,18 @@ import core.framework.api.web.service.PathParam;
 /**
  * @author simple
  */
-public interface CustomeAJAXWebService {
+public interface CustomerAJAXWebService {
 
     @GET
-    @Path("/customer/:id")
+    @Path("/ajax/customer/:id")
     CustomerAJAXView getCustomer(@PathParam("id") String id);
 
     @PUT
-    @Path("/customer")
+    @Path("/ajax/customer")
     SearchCustomerAJAXResponse searchCustomer(String name);
 
     @POST
-    @Path("/customer")
+    @Path("/ajax/customer")
     CustomerAJAXView updateCustomer(UpdateCustomerAJAXRequest request);
 
 }

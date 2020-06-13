@@ -1,4 +1,4 @@
-package app.web;
+package app.customersite.web;
 
 import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
@@ -11,7 +11,7 @@ import core.framework.web.Response;
 /**
  * @author simple
  */
-public class CustomerCotroller {
+public class CustomerController {
     @Inject
     CustomerWebService service;
 

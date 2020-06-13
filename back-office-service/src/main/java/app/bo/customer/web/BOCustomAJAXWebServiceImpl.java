@@ -2,7 +2,11 @@ package app.bo.customer.web;
 
 
 
-import app.bo.customer.api.*;
+import app.bo.customer.api.BOCustomerAJAXView;
+import app.bo.customer.api.BOCustomerAJAXWebService;
+import app.bo.customer.api.BOSearchCustomerAJAXRequest;
+import app.bo.customer.api.BOSearchCustomerAJAXResponse;
+import app.bo.customer.api.BOUpdateCustomerAJAXRequest;
 import app.bo.customer.service.CustomService;
 import core.framework.inject.Inject;
 
@@ -10,7 +14,7 @@ import core.framework.inject.Inject;
 /**
  * @author simple
  */
-public class CustomAJAXWebServiceImpl implements BOCustomerAJAXWebService {
+public class BOCustomAJAXWebServiceImpl implements BOCustomerAJAXWebService {
     @Inject
     CustomService service;
     
