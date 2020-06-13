@@ -8,7 +8,7 @@ import core.framework.api.web.service.Path;
 import core.framework.api.web.service.PathParam;
 
 /**
- * @Author simple
+ * @author simple
  */
 public interface CustomeAjaxWebService {
 
