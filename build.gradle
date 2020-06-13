@@ -90,12 +90,6 @@ project(':back-office-service') {
     }
 }
 
-project(':back-office-service-interface') {
-    dependencies {
-        implementation project(':customer-service-interface')
-    }
-}
-
 project(':customer-site-service') {
     dependencies {
         implementation project(':customer-service-interface')
@@ -103,11 +97,6 @@ project(':customer-site-service') {
     }
 }
 
-project(':customer-site-service-interface') {
-    dependencies {
-        implementation project(':customer-service-interface')
-    }
-}
 //configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
 //    apply from: file("${rootDir}/gradle/db-migration.gradle")
 //

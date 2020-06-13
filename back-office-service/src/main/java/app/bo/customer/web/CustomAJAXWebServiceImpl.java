@@ -2,9 +2,8 @@ package app.bo.customer.web;
 
 
 
-import app.bo.customer.api.CustomerAJAXView;
+import app.bo.customer.api.*;
 import app.bo.customer.service.CustomService;
-import app.bo.customer.api.CustomerAJAXWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
@@ -29,12 +28,12 @@ public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
     }
 
     @Override
-    public BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request) {
+    public BOSearchCustomerAJAXResponse searchCustomer(BOSearchCustomerAJAXRequest request) {
         return service.searchCustomer(request);
     }
 
     @Override
-    public CustomerAJAXView updateCustomer(BOUpdateCustomerRequest request) {
+    public CustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request) {
         return service.updateCustomer(request);
     }
 
