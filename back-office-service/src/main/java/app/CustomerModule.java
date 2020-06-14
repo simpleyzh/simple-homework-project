@@ -1,8 +1,8 @@
 package app;
 
-import app.bo.customer.api.BOCustomerAJAXWebService;
-import app.bo.customer.service.CustomService;
-import app.bo.customer.web.BOCustomAJAXWebServiceImpl;
+import app.customer.api.BOCustomerAJAXWebService;
+import app.customer.service.CustomService;
+import app.customer.web.BOCustomAJAXWebServiceImpl;
 import app.customer.api.BOCustomerWebService;
 import core.framework.module.Module;
 
@@ -14,6 +14,6 @@ public class CustomerModule extends Module {
     protected void initialize() {
         api().client(BOCustomerWebService.class, requiredProperty("app.customer.serviceURL"));
         bind(CustomService.class);
-        api().service(BOCustomerAJAXWebService.class, bean(BOCustomAJAXWebServiceImpl.class));
+        api().service(BOCustomerAJAXWebService.class, bind(BOCustomAJAXWebServiceImpl.class));
     }
 }

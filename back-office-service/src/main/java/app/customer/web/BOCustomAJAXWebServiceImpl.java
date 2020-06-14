@@ -1,13 +1,13 @@
-package app.bo.customer.web;
+package app.customer.web;
 
 
 
-import app.bo.customer.api.BOCustomerAJAXView;
-import app.bo.customer.api.BOCustomerAJAXWebService;
-import app.bo.customer.api.BOSearchCustomerAJAXRequest;
-import app.bo.customer.api.BOSearchCustomerAJAXResponse;
-import app.bo.customer.api.BOUpdateCustomerAJAXRequest;
-import app.bo.customer.service.CustomService;
+import app.customer.api.BOCustomerAJAXView;
+import app.customer.api.BOCustomerAJAXWebService;
+import app.customer.api.BOSearchCustomerAJAXRequest;
+import app.customer.api.BOSearchCustomerAJAXResponse;
+import app.customer.api.BOUpdateCustomerAJAXRequest;
+import app.customer.service.CustomService;
 import core.framework.inject.Inject;
 
 

@@ -1,4 +1,4 @@
-package app.service;
+package app.customer.service;
 
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
@@ -36,7 +36,7 @@ public class CustomerService {
             customer.email = request.email;
             customer.sex = request.sex;
             repository.insert(customer);
-            return view(get(request.id));
+            return view(repository.get(customer.id).get());
         }
     }
 

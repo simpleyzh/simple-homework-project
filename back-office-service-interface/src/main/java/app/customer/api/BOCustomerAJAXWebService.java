@@ -1,4 +1,4 @@
-package app.bo.customer.api;
+package app.customer.api;
 
 
 import core.framework.api.web.service.DELETE;
@@ -17,18 +17,18 @@ public interface BOCustomerAJAXWebService {
     BOCustomerAJAXView createCustomer(BOCustomerAJAXView request);
 
     @GET
-    @Path("/bo/customer/:id")
+    @Path("/ajax/customer/:id")
     BOCustomerAJAXView getCustomer(@PathParam("id") String id);
 
     @PUT
-    @Path("/bo/customer")
+    @Path("/ajax/customer")
     BOSearchCustomerAJAXResponse searchCustomer(BOSearchCustomerAJAXRequest request);
 
     @POST
-    @Path("/bo/customer")
+    @Path("/ajax/customer")
     BOCustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request);
 
     @DELETE
-    @Path("/bo/customer/:id/d")
+    @Path("/ajax/customer/:id/d")
     void deleteCustomer(@PathParam("id") String id);
 }

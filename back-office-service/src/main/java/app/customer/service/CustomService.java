@@ -1,10 +1,10 @@
-package app.bo.customer.service;
+package app.customer.service;
 
 
-import app.bo.customer.api.BOSearchCustomerAJAXRequest;
-import app.bo.customer.api.BOSearchCustomerAJAXResponse;
-import app.bo.customer.api.BOUpdateCustomerAJAXRequest;
-import app.bo.customer.api.BOCustomerAJAXView;
+import app.customer.api.BOSearchCustomerAJAXRequest;
+import app.customer.api.BOSearchCustomerAJAXResponse;
+import app.customer.api.BOUpdateCustomerAJAXRequest;
+import app.customer.api.BOCustomerAJAXView;
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;

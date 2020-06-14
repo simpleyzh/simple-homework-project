@@ -1,4 +1,4 @@
-package app.bo.customer.api;
+package app.customer.api;
 
 import core.framework.api.json.Property;
 
