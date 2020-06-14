@@ -17,6 +17,6 @@ public class CustomerSiteModule extends Module {
 //        http().route(GET, "/customer/:id", controller::get);
         api().client(CustomerWebService.class, requiredProperty("app.customer.serviceURL"));
         bind(CustomerSiteService.class);
-        api().service(CustomerAJAXWebService.class, bean(CustomerAJAXWebServiceImpl.class));
+        api().service(CustomerAJAXWebService.class, bind(CustomerAJAXWebServiceImpl.class));
     }
 }
