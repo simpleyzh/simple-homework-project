@@ -13,7 +13,7 @@ import core.framework.api.web.service.DELETE;
 public interface CustomerAJAXWebService {
 
     @POST
-    @Path("/ajax/customer/d")
+    @Path("/ajax/customer/c")
     CustomerAJAXView createCustomer(CustomerAJAXView request);
 
     @GET

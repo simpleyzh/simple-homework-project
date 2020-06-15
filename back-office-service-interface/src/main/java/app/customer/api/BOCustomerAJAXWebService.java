@@ -13,7 +13,7 @@ import core.framework.api.web.service.PathParam;
  */
 public interface BOCustomerAJAXWebService {
     @POST
-    @Path("/bo/customer/d")
+    @Path("/ajax/customer/c")
     BOCustomerAJAXView createCustomer(BOCustomerAJAXView request);
 
     @GET
