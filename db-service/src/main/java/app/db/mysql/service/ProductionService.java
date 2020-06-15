@@ -73,6 +73,7 @@ public class ProductionService {
             int flag = 0;
             for (int i = 0; i < 5; i++) {
                 insert();
+//                repository.batchInsert();
                 flag = 1;
             }
             if (flag == 1) {
