@@ -110,3 +110,9 @@ project(':web-site-interface') {
     }
 }
 
+project(':demo-async') {
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation project(':demo-async-service-interface')
+    }
+}

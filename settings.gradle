@@ -8,5 +8,7 @@ include 'demo-service',
         'back-office-service-interface',
         'web-site',
         'web-site-interface',
-        'customer-service-db-migration'
+        'customer-service-db-migration',
+        'demo-async'
+include 'demo-async-service-interface'
 

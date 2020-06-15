@@ -21,7 +21,7 @@ public class Production {
 
     @NotBlank
     @Column(name = "status")
-    public String status;
+    public Status status;
 
     @NotNull
     @Column(name = "price")
