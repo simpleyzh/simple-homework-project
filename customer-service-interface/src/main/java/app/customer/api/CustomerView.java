@@ -27,7 +27,6 @@ public class CustomerView {
     @Property(name = "email")
     public String email;
 
-    @NotBlank
     @NotNull
     @Property(name = "sex")
     public CustomerSexView customerSexView;

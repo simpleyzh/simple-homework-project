@@ -27,7 +27,6 @@ public class Customer {
     public String email;
 
     @NotNull
-    @NotBlank
     @Column(name = "sex")
     public Sex sex;
 

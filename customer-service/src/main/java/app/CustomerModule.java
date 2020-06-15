@@ -2,6 +2,8 @@ package app;
 
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.CustomerWebService;
+import app.customer.domain.Sex;
+import app.customer.service.BOCustomerService;
 import app.customer.service.CustomerService;
 import app.customer.domain.Customer;
 import app.customer.web.BOCustomerWebServiceImpl;
@@ -16,6 +18,7 @@ public class CustomerModule extends Module {
     protected void initialize() {
         db().repository(Customer.class);
         bind(CustomerService.class);
+        bind(BOCustomerService.class);
         api().service(BOCustomerWebService.class, bind(BOCustomerWebServiceImpl.class));
         api().service(CustomerWebService.class, bind(CustomerWebServiceImpl.class));
     }

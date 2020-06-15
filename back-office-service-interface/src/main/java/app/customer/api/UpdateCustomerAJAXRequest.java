@@ -7,11 +7,6 @@ import core.framework.api.validate.NotNull;
 public class UpdateCustomerAJAXRequest {
     @NotBlank
     @NotNull
-    @Property(name = "id")
-    public String id;
-
-    @NotBlank
-    @NotNull
     @Property(name = "email")
     public String email;
 

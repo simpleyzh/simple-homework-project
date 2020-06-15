@@ -27,7 +27,6 @@ public class CustomerAJAXView {
     @Property(name = "email")
     public String email;
 
-    @NotBlank
     @NotNull
     @Property(name = "sex")
     public CustomerSexAJAXView sex;

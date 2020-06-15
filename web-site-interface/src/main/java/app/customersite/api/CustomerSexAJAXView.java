@@ -1,13 +1,13 @@
 package app.customersite.api;
 
-import core.framework.db.DBEnumValue;
+import core.framework.api.json.Property;
 
 /**
  * @author simple
  */
 public enum CustomerSexAJAXView {
-    @DBEnumValue("男")
+    @Property(name = "男")
     MAN,
-    @DBEnumValue("女")
+    @Property(name = "女")
     WOMAN
 }
