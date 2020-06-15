@@ -1,14 +1,16 @@
 package app.customer.service;
 
 
-import app.customer.api.BOSearchCustomerAJAXRequest;
-import app.customer.api.BOSearchCustomerAJAXResponse;
-import app.customer.api.BOUpdateCustomerAJAXRequest;
-import app.customer.api.BOCustomerAJAXView;
+import app.customer.api.SearchCustomerAJAXRequest;
+import app.customer.api.SearchCustomerAJAXResponse;
+import app.customer.api.UpdateCustomerAJAXRequest;
+import app.customer.api.CustomerAJAXView;
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
+import app.customer.api.CustomerSexAJAXView;
+import app.customer.api.CustomerSexView;
 import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
 
@@ -19,33 +21,32 @@ public class CustomService {
     @Inject
     BOCustomerWebService customerWebService;
 
-    public BOCustomerAJAXView createCustomer(BOCustomerAJAXView request) {
+    public void createCustomer(CustomerAJAXView request) {
         CustomerView view = new CustomerView();
         view.id = request.id;
         view.age = request.age;
         view.email = request.email;
         view.name = request.name;
-        view.sex = request.sex;
-        return view(customerWebService.createCustomer(view));
+        view.customerSexView = CustomerSexView.valueOf(request.sex.name());
+        customerWebService.createCustomer(view);
     }
 
-    public BOCustomerAJAXView updateCustomer(BOUpdateCustomerAJAXRequest request) {
+    public void updateCustomer(String id, UpdateCustomerAJAXRequest request) {
         BOUpdateCustomerRequest view = new BOUpdateCustomerRequest();
-        view.id = request.id;
         view.email = request.email;
         view.name = request.name;
-        return view(customerWebService.updateCustomer(view));
+        customerWebService.updateCustomer(id, view);
     }
 
-    public BOCustomerAJAXView getCustomer(String id) {
+    public CustomerAJAXView getCustomer(String id) {
         return view(customerWebService.getCustomer(id));
     }
 
-    public BOSearchCustomerAJAXResponse searchCustomer(BOSearchCustomerAJAXRequest request) {
+    public SearchCustomerAJAXResponse searchCustomer(SearchCustomerAJAXRequest request) {
         BOSearchCustomerRequest view = new BOSearchCustomerRequest();
         view.name = request.name;
         BOSearchCustomerResponse result = customerWebService.searchCustomer(view);
-        BOSearchCustomerAJAXResponse response = new BOSearchCustomerAJAXResponse();
+        SearchCustomerAJAXResponse response = new SearchCustomerAJAXResponse();
         for (CustomerView c : result.customerViews) {
             response.customerViews.add(view(c));
         }
@@ -56,12 +57,12 @@ public class CustomService {
         customerWebService.deleteCustomer(id);
     }
 
-    private BOCustomerAJAXView view(CustomerView customer) {
-        BOCustomerAJAXView view = new BOCustomerAJAXView();
+    private CustomerAJAXView view(CustomerView customer) {
+        CustomerAJAXView view = new CustomerAJAXView();
         view.id = customer.id;
         view.name = customer.name;
         view.age = customer.age;
-        view.sex = customer.sex;
+        view.sex = CustomerSexAJAXView.valueOf(customer.customerSexView.name());
         view.email = customer.email;
         return view;
     }

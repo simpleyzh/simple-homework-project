@@ -1,13 +1,13 @@
-package app.customer.api;
+package app.customersite.api;
 
 import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
 /**
- * @author simple
+ * @Author simple
  */
-public class BOCustomerAJAXView {
+public class CustomerAJAXView {
     @NotBlank
     @NotNull
     @Property(name = "id")
@@ -30,5 +30,5 @@ public class BOCustomerAJAXView {
     @NotBlank
     @NotNull
     @Property(name = "sex")
-    public String sex;
+    public CustomerSexAJAXView sex;
 }

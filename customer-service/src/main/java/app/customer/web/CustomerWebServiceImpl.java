@@ -16,8 +16,8 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     CustomerService service;
 
     @Override
-    public CustomerView createCustomer(CustomerView request) {
-        return service.createCustomer(request);
+    public void createCustomer(CustomerView request) {
+        service.createCustomer(request);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     }
 
     @Override
-    public CustomerView updateCustomer(UpdateCustomerRequest request) {
-        return service.updateCustomer(request);
+    public void updateCustomer(String id, UpdateCustomerRequest request) {
+        service.updateCustomer(id, request);
     }
 
     @Override

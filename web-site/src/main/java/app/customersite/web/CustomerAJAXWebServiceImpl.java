@@ -14,8 +14,8 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     CustomerSiteService service;
 
     @Override
-    public CustomerAJAXView createCustomer(CustomerAJAXView request) {
-        return service.createCustomer(request);
+    public void createCustomer(CustomerAJAXView request) {
+        service.createCustomer(request);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     }
 
     @Override
-    public CustomerAJAXView updateCustomer(UpdateCustomerAJAXRequest request) {
-        return service.updateCustomer(request);
+    public void updateCustomer(String id, UpdateCustomerAJAXRequest request) {
+        service.updateCustomer(id, request);
     }
 
     @Override

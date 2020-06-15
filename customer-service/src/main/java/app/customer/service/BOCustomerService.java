@@ -1,10 +1,10 @@
 package app.customer.service;
 
+import app.customer.api.BOSearchCustomerRequest;
+import app.customer.api.BOSearchCustomerResponse;
+import app.customer.api.BOUpdateCustomerRequest;
 import app.customer.api.CustomerSexView;
 import app.customer.api.CustomerView;
-import app.customer.api.SearchCustomerRequest;
-import app.customer.api.SearchCustomerResponse;
-import app.customer.api.UpdateCustomerRequest;
 import app.customer.domain.Customer;
 import app.customer.domain.Sex;
 import core.framework.db.Repository;
@@ -20,7 +20,7 @@ import java.util.UUID;
 /**
  * @author simple
  */
-public class CustomerService {
+public class BOCustomerService {
     @Inject
     Repository<Customer> repository;
 
@@ -38,7 +38,7 @@ public class CustomerService {
         }
     }
 
-    public void updateCustomer(String id, UpdateCustomerRequest request) {
+    public void updateCustomer(String id, BOUpdateCustomerRequest request) {
         Customer customer = new Customer();
         customer.id = id;
         customer.name = request.name;
@@ -50,9 +50,9 @@ public class CustomerService {
         return view(get(id));
     }
 
-    public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
+    public BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request) {
         List<Customer> list = repository.select("name = ?", request.name);
-        SearchCustomerResponse searchCustomerResponse = new SearchCustomerResponse();
+        BOSearchCustomerResponse searchCustomerResponse = new BOSearchCustomerResponse();
         List<CustomerView> list1 = new ArrayList<>(10);
         for (Customer c : list) {
             CustomerView view = view(c);
@@ -61,7 +61,6 @@ public class CustomerService {
         searchCustomerResponse.customerViews = list1;
         return searchCustomerResponse;
     }
-
 
     public void deleteCustomer(String id) {
         repository.delete(id);

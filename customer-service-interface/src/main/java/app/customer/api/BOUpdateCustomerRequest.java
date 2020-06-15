@@ -8,10 +8,6 @@ import core.framework.api.validate.NotNull;
  * @author simple
  */
 public class BOUpdateCustomerRequest {
-    @NotBlank
-    @NotNull
-    @Property(name = "id")
-    public String id;
 
     @NotBlank
     @NotNull

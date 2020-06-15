@@ -29,7 +29,7 @@ public class Customer {
     @NotNull
     @NotBlank
     @Column(name = "sex")
-    public String sex;
+    public Sex sex;
 
     @NotNull
     @Column(name = "age")

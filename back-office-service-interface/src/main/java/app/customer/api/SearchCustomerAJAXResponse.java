@@ -4,7 +4,7 @@ import core.framework.api.json.Property;
 
 import java.util.List;
 
-public class BOSearchCustomerAJAXResponse {
+public class SearchCustomerAJAXResponse {
     @Property(name = "views")
-    public List<BOCustomerAJAXView> customerViews;
+    public List<CustomerAJAXView> customerViews;
 }

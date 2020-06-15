@@ -30,5 +30,5 @@ public class CustomerView {
     @NotBlank
     @NotNull
     @Property(name = "sex")
-    public String sex;
+    public CustomerSexView customerSexView;
 }

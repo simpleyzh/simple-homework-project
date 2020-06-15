@@ -3,6 +3,7 @@ package app.customersite.web;
 import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
 import app.customersite.api.CustomerAJAXView;
+import app.customersite.api.CustomerSexAJAXView;
 import core.framework.inject.Inject;
 import core.framework.json.JSON;
 import core.framework.web.Request;
@@ -23,7 +24,7 @@ public class CustomerController {
         CustomerAJAXView result = new CustomerAJAXView();
         result.id = view.id;
         result.name = view.name;
-        result.sex = view.sex;
+        result.sex = CustomerSexAJAXView.valueOf(view.customerSexView.name());
         result.email = view.email;
         result.age = view.age;
         return result;

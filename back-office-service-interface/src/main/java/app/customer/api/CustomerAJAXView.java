@@ -4,11 +4,23 @@ import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
-public class BOUpdateCustomerAJAXRequest {
+/**
+ * @author simple
+ */
+public class CustomerAJAXView {
     @NotBlank
     @NotNull
     @Property(name = "id")
     public String id;
+
+    @NotBlank
+    @NotNull
+    @Property(name = "name")
+    public String name;
+
+    @NotNull
+    @Property(name = "age")
+    public Integer age;
 
     @NotBlank
     @NotNull
@@ -17,6 +29,6 @@ public class BOUpdateCustomerAJAXRequest {
 
     @NotBlank
     @NotNull
-    @Property(name = "name")
-    public String name;
+    @Property(name = "sex")
+    public CustomerSexAJAXView sex;
 }
