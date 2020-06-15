@@ -1,8 +1,8 @@
-package app.mysql.service;
+package app.db.mysql.service;
 
 
-import app.mysql.domain.Production;
-import app.mysql.domain.Status;
+import app.db.mysql.domain.Production;
+import app.db.mysql.domain.Status;
 import core.framework.db.Database;
 import core.framework.db.Repository;
 import core.framework.db.Transaction;

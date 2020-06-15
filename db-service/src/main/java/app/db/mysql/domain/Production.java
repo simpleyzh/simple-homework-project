@@ -1,4 +1,4 @@
-package app.mysql.domain;
+package app.db.mysql.domain;
 
 
 

@@ -1,11 +1,12 @@
-include 'demo-service'
-include 'db-service-db-migration'
-include 'db-service-mongo-migration'
-include 'db-service'
-include 'customer-service'
-include 'customer-service-interface'
-include 'back-office-service'
-include 'back-office-service-interface'
-include 'web-site'
-include 'web-site-interface'
+include 'demo-service',
+        'db-service-db-migration',
+        'db-service-mongo-migration',
+        'db-service',
+        'customer-service',
+        'customer-service-interface',
+        'back-office-service',
+        'back-office-service-interface',
+        'web-site',
+        'web-site-interface',
+        'customer-service-db-migration'
 

@@ -1,4 +1,4 @@
-package app.mongo.domain;
+package app.db.mysql.domain;
 
 /**
  * @author simple

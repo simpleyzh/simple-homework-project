@@ -1,7 +1,7 @@
 package app;
 
-import app.mongo.domain.Production;
-import app.mongo.service.ProductionService;
+import app.db.mongo.domain.Production;
+import app.db.mongo.service.ProductionService;
 import core.framework.module.Module;
 import core.framework.mongo.module.MongoConfig;
 
@@ -12,7 +12,7 @@ public class MongoModule extends Module {
     @Override
     protected void initialize() {
         MongoConfig config = config(MongoConfig.class);
-        config.uri("mongodb://localhost:27017/test");
+        config.uri(requiredProperty("sys.mongo.url"));
         config.collection(Production.class);
 
         bind(ProductionService.class);

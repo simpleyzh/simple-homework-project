@@ -1,7 +1,7 @@
 package app;
 
-import app.mysql.domain.Production;
-import app.mysql.service.ProductionService;
+import app.db.mysql.domain.Production;
+import app.db.mysql.service.ProductionService;
 import core.framework.module.Module;
 
 /**

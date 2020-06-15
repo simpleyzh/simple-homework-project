@@ -1,4 +1,4 @@
-package app.mongo.domain;
+package app.db.mongo.domain;
 
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
@@ -18,7 +18,7 @@ public class Production {
 
     @NotBlank
     @Field(name = "status")
-    public String status;
+    public Status status;
 
     @NotNull
     @Field(name = "price")
