@@ -14,21 +14,21 @@ public interface CustomerAJAXWebService {
 
     @POST
     @Path("/ajax/customer")
-    void createCustomer(CustomerAJAXView request);
+    void create(CreateCustomerAJAXRequest request);
 
     @GET
     @Path("/ajax/customer/:id")
-    CustomerAJAXView getCustomer(@PathParam("id") String id);
+    CustomerAJAXView get(@PathParam("id") String id);
 
     @PUT
     @Path("/ajax/customer")
-    SearchCustomerAJAXResponse searchCustomer(SearchCustomerAJAXRequest request);
+    SearchCustomerAJAXResponse search(SearchCustomerAJAXRequest request);
 
     @PUT
     @Path("/ajax/customer/:id")
-    void updateCustomer(@PathParam("id")String id, UpdateCustomerAJAXRequest request);
+    void update(@PathParam("id")String id, UpdateCustomerAJAXRequest request);
 
     @DELETE
     @Path("/ajax/customer/:id")
-    void deleteCustomer(@PathParam("id") String id);
+    void delete(@PathParam("id") String id);
 }

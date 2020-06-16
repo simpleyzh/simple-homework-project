@@ -29,5 +29,12 @@ public class CustomerView {
 
     @NotNull
     @Property(name = "sex")
-    public CustomerSexView customerSexView;
+    public Sex sex;
+
+    public enum Sex {
+        @Property(name = "male")
+        MAN,
+        @Property(name = "female")
+        WOMAN
+    }
 }

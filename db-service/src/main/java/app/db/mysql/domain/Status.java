@@ -1,18 +1,14 @@
 package app.db.mysql.domain;
 
+import core.framework.api.json.Property;
+
 /**
  * @author simple
  */
 public enum Status {
-    ACTIVE("active"), UNACTIVE("unactive");
+    @Property(name = "active")
+    ACTIVE,
 
-    String name;
-
-    Status(String name) {
-        this.name = name;
-    }
-
-    public String value() {
-        return this.name;
-    }
+    @Property(name = "unactive")
+    UNACTIVE
 }

@@ -28,7 +28,7 @@ public class ProductionService {
         Production production = new Production();
         production.id = UUID.randomUUID().toString();
         production.price = 299d;
-        production.status = Status.UNACTIVE.value();
+        production.status = Status.UNACTIVE;
         production.createdTime = LocalDateTime.now();
         production.createdBy = "ProductionService";
         production.updateTime = LocalDateTime.now();
@@ -40,7 +40,7 @@ public class ProductionService {
         Production production = new Production();
         production.id = "6c53152f-4eda-42f6-b584-ec3469e144e2";
         production.price = 299d;
-        production.status = Status.ACTIVE.value();
+        production.status = Status.ACTIVE;
         production.updateBy = "ProductionService";
         production.createdTime = LocalDateTime.now();
         production.createdBy = "ProductionService";

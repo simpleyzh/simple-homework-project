@@ -1,5 +1,6 @@
 package app.customer.web;
 
+import app.customer.api.CreateCustomerRequest;
 import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
 import app.customer.api.SearchCustomerRequest;
@@ -7,6 +8,7 @@ import app.customer.api.SearchCustomerResponse;
 import app.customer.api.UpdateCustomerRequest;
 import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
+import core.framework.log.ActionLogContext;
 
 /**
  * @author simple
@@ -16,28 +18,30 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     CustomerService service;
 
     @Override
-    public void createCustomer(CustomerView request) {
-        service.createCustomer(request);
+    public void create(CreateCustomerRequest request) {
+        service.create(request);
     }
 
     @Override
-    public CustomerView getCustomer(String id) {
-        return service.getCustomer(id);
+    public CustomerView get(String id) {
+        return service.get(id);
     }
 
     @Override
-    public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
-        return service.searchCustomer(request);
+    public SearchCustomerResponse search(SearchCustomerRequest request) {
+        return service.search(request);
     }
 
     @Override
-    public void updateCustomer(String id, UpdateCustomerRequest request) {
-        service.updateCustomer(id, request);
+    public void update(String id, UpdateCustomerRequest request) {
+        ActionLogContext.put("customerId", id);
+        service.update(id, request);
     }
 
     @Override
-    public void deleteCustomer(String id) {
-        service.deleteCustomer(id);
+    public void delete(String id) {
+        ActionLogContext.put("customerId", id);
+        service.delete(id);
     }
 
 

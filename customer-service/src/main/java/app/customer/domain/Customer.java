@@ -3,6 +3,7 @@ package app.customer.domain;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 import core.framework.db.Column;
+import core.framework.db.DBEnumValue;
 import core.framework.db.PrimaryKey;
 import core.framework.db.Table;
 
@@ -33,4 +34,11 @@ public class Customer {
     @NotNull
     @Column(name = "age")
     public Integer age;
+
+    public enum Sex {
+        @DBEnumValue("男")
+        MAN,
+        @DBEnumValue("女")
+        WOMAN
+    }
 }

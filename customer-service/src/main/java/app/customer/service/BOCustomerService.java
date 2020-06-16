@@ -1,14 +1,14 @@
 package app.customer.service;
 
+import app.customer.api.BOCreateCustomerRequest;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
-import app.customer.api.CustomerSexView;
 import app.customer.api.CustomerView;
 import app.customer.domain.Customer;
-import app.customer.domain.Sex;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
+import core.framework.util.Strings;
 import core.framework.web.exception.NotFoundException;
 
 import java.util.List;
@@ -22,17 +22,17 @@ public class BOCustomerService {
     @Inject
     Repository<Customer> repository;
 
-    public void createCustomer(CustomerView request) {
+    public void create(BOCreateCustomerRequest request) {
         Customer customer = new Customer();
         customer.id = UUID.randomUUID().toString();
         customer.name = request.name;
         customer.age = request.age;
         customer.email = request.email;
-        customer.sex = Sex.valueOf(request.customerSexView.name());
+        customer.sex = Customer.Sex.valueOf(request.sex.name());
         repository.insert(customer);
     }
 
-    public void updateCustomer(String id, BOUpdateCustomerRequest request) {
+    public void update(String id, BOUpdateCustomerRequest request) {
         Customer customer = new Customer();
         customer.id = id;
         customer.name = request.name;
@@ -40,18 +40,18 @@ public class BOCustomerService {
         repository.partialUpdate(customer);
     }
 
-    public CustomerView getCustomer(String id) {
-        return view(get(id));
+    public CustomerView get(String id) {
+        return view(selectOne(id));
     }
 
-    public BOSearchCustomerResponse searchCustomer(BOSearchCustomerRequest request) {
+    public BOSearchCustomerResponse search(BOSearchCustomerRequest request) {
         List<Customer> list = repository.select("name = ?", request.name);
         BOSearchCustomerResponse searchCustomerResponse = new BOSearchCustomerResponse();
         searchCustomerResponse.customerViews = list.stream().map(this::view).collect(Collectors.toList());
         return searchCustomerResponse;
     }
 
-    public void deleteCustomer(String id) {
+    public void delete(String id) {
         repository.delete(id);
     }
 
@@ -60,12 +60,12 @@ public class BOCustomerService {
         view.id = customer.id;
         view.name = customer.name;
         view.age = customer.age;
-        view.customerSexView = CustomerSexView.valueOf(customer.sex.name());
+        view.sex = CustomerView.Sex.valueOf(customer.sex.name());
         view.email = customer.email;
         return view;
     }
 
-    private Customer get(String id) {
-        return repository.get(id).orElseThrow(() -> new NotFoundException("Id is not found. Id is" + id));
+    private Customer selectOne(String id) {
+        return repository.get(id).orElseThrow(() -> new NotFoundException(Strings.format("Customer not found. CustomerId = {}", id), "ID_NOT_FOUND"));
     }
 }

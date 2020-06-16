@@ -13,21 +13,21 @@ import core.framework.api.web.service.PathParam;
 public interface CustomerWebService {
     @POST
     @Path("/customer")
-    void createCustomer(CustomerView request);
+    void create(CreateCustomerRequest request);
 
     @GET
     @Path("/customer/:id")
-    CustomerView getCustomer(@PathParam("id") String id);
+    CustomerView get(@PathParam("id") String id);
 
     @PUT
     @Path("/customer")
-    SearchCustomerResponse searchCustomer(SearchCustomerRequest request);
+    SearchCustomerResponse search(SearchCustomerRequest request);
 
     @PUT
     @Path("/customer/:id")
-    void updateCustomer(@PathParam("id") String id, UpdateCustomerRequest request);
+    void update(@PathParam("id") String id, UpdateCustomerRequest request);
 
     @DELETE
     @Path("/customer/:id")
-    void deleteCustomer(@PathParam("id") String id);
+    void delete(@PathParam("id") String id);
 }

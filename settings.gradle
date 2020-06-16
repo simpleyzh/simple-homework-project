@@ -1,14 +1,14 @@
-include 'demo-service',
+include 'back-office-service',
+        'back-office-service-interface',
+        'customer-service',
+        'customer-service-db-migration',
+        'customer-service-interface',
+        'db-service',
         'db-service-db-migration',
         'db-service-mongo-migration',
-        'db-service',
-        'customer-service',
-        'customer-service-interface',
-        'back-office-service',
-        'back-office-service-interface',
+        'demo-async',
+        'demo-async-service-interface',
+        'demo-service',
         'web-site',
-        'web-site-interface',
-        'customer-service-db-migration',
-        'demo-async'
-include 'demo-async-service-interface'
+        'web-site-interface'
 

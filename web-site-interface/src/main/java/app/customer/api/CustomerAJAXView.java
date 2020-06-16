@@ -29,5 +29,12 @@ public class CustomerAJAXView {
 
     @NotNull
     @Property(name = "sex")
-    public CustomerSexAJAXView sex;
+    public Sex sex;
+
+    public enum Sex {
+        @Property(name = "male")
+        MAN,
+        @Property(name = "female")
+        WOMAN
+    }
 }
