@@ -3,6 +3,6 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `name`         VARCHAR(20)                 NOT NULL,
   `age`          INT                         NOT NULL,
   `email`        VARCHAR(20)                 NOT NULL,
-  `sex`          VARCHAR(4)                  NOT NULL,
+  `sex`          VARCHAR(10)                 NOT NULL,
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '消费者表';

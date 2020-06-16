@@ -7,8 +7,8 @@ import core.framework.db.DBEnumValue;
  * @author simple
  */
 public enum CustomerSexAJAXView {
-    @Property(name = "男")
+    @Property(name = "male")
     MAN,
-    @Property(name = "女")
+    @Property(name = "female")
     WOMAN
 }
