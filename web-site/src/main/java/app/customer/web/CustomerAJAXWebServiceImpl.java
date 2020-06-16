@@ -1,17 +1,17 @@
-package app.customersite.web;
+package app.customer.web;
 
 
-import app.customersite.api.CustomerAJAXView;
-import app.customersite.api.UpdateCustomerAJAXRequest;
-import app.customersite.api.CustomerAJAXWebService;
-import app.customersite.api.SearchCustomerAJAXRequest;
-import app.customersite.api.SearchCustomerAJAXResponse;
-import app.customersite.service.CustomerSiteService;
+import app.customer.api.CustomerAJAXView;
+import app.customer.api.UpdateCustomerAJAXRequest;
+import app.customer.api.CustomerAJAXWebService;
+import app.customer.api.SearchCustomerAJAXRequest;
+import app.customer.api.SearchCustomerAJAXResponse;
+import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
 
 public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     @Inject
-    CustomerSiteService service;
+    CustomerService service;
 
     @Override
     public void createCustomer(CustomerAJAXView request) {

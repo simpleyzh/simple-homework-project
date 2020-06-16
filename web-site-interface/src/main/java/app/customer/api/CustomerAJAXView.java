@@ -1,4 +1,4 @@
-package app.customersite.api;
+package app.customer.api;
 
 import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;

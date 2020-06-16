@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @author simple
@@ -25,17 +26,13 @@ public class CustomerService {
     Repository<Customer> repository;
 
     public void createCustomer(CustomerView request) {
-        if (repository.selectOne("id = ?", request.id).isPresent()) {
-            throw new ConflictException("customer id is exist,id = " + request.id);
-        } else {
-            Customer customer = new Customer();
-            customer.id = UUID.randomUUID().toString();
-            customer.name = request.name;
-            customer.age = request.age;
-            customer.email = request.email;
-            customer.sex = Sex.valueOf(request.customerSexView.name());
-            repository.insert(customer);
-        }
+        Customer customer = new Customer();
+        customer.id = UUID.randomUUID().toString();
+        customer.name = request.name;
+        customer.age = request.age;
+        customer.email = request.email;
+        customer.sex = Sex.valueOf(request.customerSexView.name());
+        repository.insert(customer);
     }
 
     public void updateCustomer(String id, UpdateCustomerRequest request) {
@@ -52,13 +49,11 @@ public class CustomerService {
 
     public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
         List<Customer> list = repository.select("name = ?", request.name);
+
         SearchCustomerResponse searchCustomerResponse = new SearchCustomerResponse();
-        List<CustomerView> list1 = new ArrayList<>(10);
-        for (Customer c : list) {
-            CustomerView view = view(c);
-            list1.add(view);
-        }
-        searchCustomerResponse.customerViews = list1;
+
+        searchCustomerResponse.customerViews = list.stream().map(this::view).collect(Collectors.toList());
+
         return searchCustomerResponse;
     }
 
@@ -78,8 +73,6 @@ public class CustomerService {
     }
 
     private Customer get(String id) {
-        Optional<Customer> customer = repository.get(id);
-        customer.orElseThrow(() -> new NotFoundException("Id is not found. Id is" + id));
-        return customer.get();
+        return repository.get(id).orElseThrow(() -> new NotFoundException("Id is not found. Id is" + id));
     }
 }

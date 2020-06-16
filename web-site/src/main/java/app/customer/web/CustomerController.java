@@ -1,9 +1,9 @@
-package app.customersite.web;
+package app.customer.web;
 
 import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
-import app.customersite.api.CustomerAJAXView;
-import app.customersite.api.CustomerSexAJAXView;
+import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerSexAJAXView;
 import core.framework.inject.Inject;
 import core.framework.json.JSON;
 import core.framework.web.Request;

@@ -1,4 +1,4 @@
-package app.customersite.api;
+package app.customer.api;
 
 import core.framework.api.web.service.Path;
 import core.framework.api.web.service.GET;

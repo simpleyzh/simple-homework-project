@@ -1,4 +1,4 @@
-package app.customersite.service;
+package app.customer.service;
 
 import app.customer.api.CustomerSexView;
 import app.customer.api.CustomerView;
@@ -6,14 +6,14 @@ import app.customer.api.CustomerWebService;
 import app.customer.api.SearchCustomerRequest;
 import app.customer.api.SearchCustomerResponse;
 import app.customer.api.UpdateCustomerRequest;
-import app.customersite.api.CustomerAJAXView;
-import app.customersite.api.CustomerSexAJAXView;
-import app.customersite.api.SearchCustomerAJAXRequest;
-import app.customersite.api.SearchCustomerAJAXResponse;
-import app.customersite.api.UpdateCustomerAJAXRequest;
+import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerSexAJAXView;
+import app.customer.api.SearchCustomerAJAXRequest;
+import app.customer.api.SearchCustomerAJAXResponse;
+import app.customer.api.UpdateCustomerAJAXRequest;
 import core.framework.inject.Inject;
 
-public class CustomerSiteService {
+public class CustomerService {
     @Inject
     CustomerWebService customerWebService;
 
