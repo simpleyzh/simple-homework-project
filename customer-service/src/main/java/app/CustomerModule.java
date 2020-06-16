@@ -2,7 +2,6 @@ package app;
 
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.CustomerWebService;
-import app.customer.domain.Sex;
 import app.customer.service.BOCustomerService;
 import app.customer.service.CustomerService;
 import app.customer.domain.Customer;

@@ -9,12 +9,9 @@ import app.customer.domain.Customer;
 import app.customer.domain.Sex;
 import core.framework.db.Repository;
 import core.framework.inject.Inject;
-import core.framework.web.exception.ConflictException;
 import core.framework.web.exception.NotFoundException;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
