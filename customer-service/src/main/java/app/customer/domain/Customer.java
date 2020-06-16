@@ -37,9 +37,9 @@ public class Customer {
     public Gender gender;
 
     public enum Gender {
-        @Property(name = "MALE")
+        @DBEnumValue("MALE")
         MALE,
-        @Property(name = "FEMALE")
+        @DBEnumValue("FEMALE")
         FEMALE
     }
 }

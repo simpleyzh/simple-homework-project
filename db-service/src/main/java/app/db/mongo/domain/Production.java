@@ -1,6 +1,5 @@
 package app.db.mongo.domain;
 
-import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 import core.framework.mongo.Collection;
 import core.framework.mongo.Field;

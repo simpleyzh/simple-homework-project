@@ -5,7 +5,7 @@ import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
 /**
- * @Author simple
+ * @author simple
  */
 public class CustomerView {
     @NotBlank
@@ -31,7 +31,7 @@ public class CustomerView {
     @Property(name = "gender")
     public Gender gender;
 
-    public enum  Gender {
+    public enum Gender {
         @Property(name = "MALE")
         MALE,
         @Property(name = "FEMALE")
