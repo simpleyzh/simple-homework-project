@@ -15,7 +15,7 @@ public class CustomerModule extends Module {
     protected void initialize() {
 //        var controller = bind(CustomerCotroller.class);
 //        http().route(GET, "/customer/:id", controller::get);
-        api().client(CustomerWebService.class, requiredProperty("app.customer.serviceURL"));
+        api().client(CustomerWebService.class, requiredProperty("app.customer.serviceURI"));
         bind(CustomerService.class);
         api().service(CustomerAJAXWebService.class, bind(CustomerAJAXWebServiceImpl.class));
     }

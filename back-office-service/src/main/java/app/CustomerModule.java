@@ -12,7 +12,7 @@ import core.framework.module.Module;
 public class CustomerModule extends Module {
     @Override
     protected void initialize() {
-        api().client(BOCustomerWebService.class, requiredProperty("app.customer.serviceURL"));
+        api().client(BOCustomerWebService.class, requiredProperty("app.customer.serviceURI"));
         bind(CustomService.class);
         api().service(CustomerAJAXWebService.class, bind(CustomAJAXWebServiceImpl.class));
     }

@@ -28,7 +28,7 @@ public class CustomerService {
         customer.name = request.name;
         customer.age = request.age;
         customer.email = request.email;
-        customer.sex = Customer.Sex.valueOf(request.sex.name());
+        customer.gender = Customer.Gender.valueOf(request.gender.name());
         repository.insert(customer);
     }
 
@@ -41,16 +41,14 @@ public class CustomerService {
     }
 
     public CustomerView get(String id) {
-        return view(selectOne(id));
+        Customer customer = selectOne(id);
+        return view(customer);
     }
 
     public SearchCustomerResponse search(SearchCustomerRequest request) {
         List<Customer> list = repository.select("name = ?", request.name);
-
         SearchCustomerResponse searchCustomerResponse = new SearchCustomerResponse();
-
         searchCustomerResponse.customerViews = list.stream().map(this::view).collect(Collectors.toList());
-
         return searchCustomerResponse;
     }
 
@@ -64,12 +62,12 @@ public class CustomerService {
         view.id = customer.id;
         view.name = customer.name;
         view.age = customer.age;
-        view.sex = CustomerView.Sex.valueOf(customer.sex.name());
+        view.gender = CustomerView.Gender.valueOf(customer.gender.name());
         view.email = customer.email;
         return view;
     }
 
     private Customer selectOne(String id) {
-        return repository.get(id).orElseThrow(() -> new NotFoundException(Strings.format("Customer not found. CustomerId = {}", id), "ID_NOT_FOUND"));
+        return repository.get(id).orElseThrow(() -> new NotFoundException(Strings.format("customer not found. customerId={}", id), "CUSTOMER_NOT_FOUND"));
     }
 }

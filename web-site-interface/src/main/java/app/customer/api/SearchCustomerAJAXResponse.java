@@ -9,5 +9,5 @@ import java.util.List;
  */
 public class SearchCustomerAJAXResponse {
     @Property(name = "list")
-    public List<CustomerAJAXView> list;
+    public List<CustomerView> list;
 }

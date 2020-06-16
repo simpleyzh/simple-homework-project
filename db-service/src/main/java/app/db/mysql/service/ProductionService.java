@@ -2,7 +2,6 @@ package app.db.mysql.service;
 
 
 import app.db.mysql.domain.Production;
-import app.db.mysql.domain.Status;
 import core.framework.db.Database;
 import core.framework.db.Repository;
 import core.framework.db.Transaction;
@@ -28,7 +27,7 @@ public class ProductionService {
         Production production = new Production();
         production.id = UUID.randomUUID().toString();
         production.price = 299d;
-        production.status = Status.UNACTIVE;
+        production.status = Production.Status.INACTIVE;
         production.createdTime = LocalDateTime.now();
         production.createdBy = "ProductionService";
         production.updateTime = LocalDateTime.now();
@@ -40,7 +39,7 @@ public class ProductionService {
         Production production = new Production();
         production.id = "6c53152f-4eda-42f6-b584-ec3469e144e2";
         production.price = 299d;
-        production.status = Status.ACTIVE;
+        production.status = Production.Status.ACTIVE;
         production.updateBy = "ProductionService";
         production.createdTime = LocalDateTime.now();
         production.createdBy = "ProductionService";

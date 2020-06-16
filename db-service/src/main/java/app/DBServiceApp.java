@@ -10,7 +10,8 @@ public class DBServiceApp extends App {
     @Override
     protected void initialize() {
         load(new SystemModule("sys.properties"));
-//        load(new MongoModule());
+        loadProperties("app.properties");
+        load(new MongoModule());
         load(new MysqlModule());
     }
 }

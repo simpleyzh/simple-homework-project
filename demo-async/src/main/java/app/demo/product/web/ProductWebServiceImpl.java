@@ -15,22 +15,22 @@ public class ProductWebServiceImpl implements ProductWebService {
     ProductService service;
 
     @Override
-    public void createProduct(CreateProductRequest request) {
+    public void create(CreateProductRequest request) {
         service.create(request);
     }
 
     @Override
-    public ProductView getProduct(String id) {
+    public ProductView get(String id) {
         return null;
     }
 
     @Override
-    public void delProduct(String id) {
+    public void delete(String id) {
 
     }
 
     @Override
-    public void updProduct(String id, UpdateProductRequest request) {
+    public void update(String id, UpdateProductRequest request) {
 
     }
 }

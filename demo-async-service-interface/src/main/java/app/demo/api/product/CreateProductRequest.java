@@ -23,5 +23,4 @@ public class CreateProductRequest {
     @NotNull
     @Property(name = "desc")
     public String desc;
-
 }

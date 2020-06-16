@@ -2,7 +2,7 @@ package app.customer.web;
 
 
 import app.customer.api.CreateCustomerAJAXRequest;
-import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerView;
 import app.customer.api.UpdateCustomerAJAXRequest;
 import app.customer.api.CustomerAJAXWebService;
 import app.customer.api.SearchCustomerAJAXRequest;
@@ -21,7 +21,7 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     }
 
     @Override
-    public CustomerAJAXView get(String id) {
+    public CustomerView get(String id) {
         return service.get(id);
     }
 
@@ -39,6 +39,6 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     @Override
     public void delete(String id) {
         ActionLogContext.put("customerId", id);
-        service.deleter(id);
+        service.delete(id);
     }
 }

@@ -6,13 +6,13 @@ import app.customer.api.CreateCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXResponse;
 import app.customer.api.UpdateCustomerAJAXRequest;
-import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerView;
 import app.customer.api.BOCustomerWebService;
 import app.customer.api.BOSearchCustomerRequest;
 import app.customer.api.BOSearchCustomerResponse;
 import app.customer.api.BOUpdateCustomerRequest;
-import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
+
 import java.util.stream.Collectors;
 
 /**
@@ -27,7 +27,7 @@ public class CustomService {
         view.age = request.age;
         view.email = request.email;
         view.name = request.name;
-        view.sex = BOCreateCustomerRequest.Sex.valueOf(request.sex.name());
+        view.gender = BOCreateCustomerRequest.Gender.valueOf(request.gender.name());
         customerWebService.create(view);
     }
 
@@ -38,7 +38,7 @@ public class CustomService {
         customerWebService.update(id, view);
     }
 
-    public CustomerAJAXView get(String id) {
+    public CustomerView get(String id) {
         return view(customerWebService.get(id));
     }
 
@@ -55,12 +55,12 @@ public class CustomService {
         customerWebService.delete(id);
     }
 
-    private CustomerAJAXView view(CustomerView customer) {
-        CustomerAJAXView view = new CustomerAJAXView();
+    private CustomerView view(CustomerView customer) {
+        CustomerView view = new CustomerView();
         view.id = customer.id;
         view.name = customer.name;
         view.age = customer.age;
-        view.sex = CustomerAJAXView.Sex.valueOf(customer.sex.name());
+        view.gender = CustomerView.Gender.valueOf(customer.gender.name());
         view.email = customer.email;
         return view;
     }

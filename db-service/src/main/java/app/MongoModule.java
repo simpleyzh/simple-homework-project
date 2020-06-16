@@ -19,8 +19,8 @@ public class MongoModule extends Module {
 
         ProductionService service = bean(ProductionService.class);
         service.insert();
-//        service.query();
-//        service.replace();
-//        service.update();
+        service.query();
+        service.replace();
+        service.update();
     }
 }

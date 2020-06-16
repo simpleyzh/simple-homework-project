@@ -12,8 +12,8 @@ import core.framework.module.Module;
 public class ProductModule extends Module {
     @Override
     protected void initialize() {
-        kafka().uri(requiredProperty("sys.kafka.url"));
-        kafka().publish("created-product", CreatedProductMessage.class);
+        kafka().uri(requiredProperty("sys.kafka.uri"));
+        kafka().publish("product-created", CreatedProductMessage.class);
         bind(ProductService.class);
         api().service(ProductWebService.class, bind(ProductWebServiceImpl.class));
     }

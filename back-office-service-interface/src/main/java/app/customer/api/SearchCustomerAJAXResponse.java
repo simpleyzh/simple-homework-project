@@ -6,5 +6,5 @@ import java.util.List;
 
 public class SearchCustomerAJAXResponse {
     @Property(name = "views")
-    public List<CustomerAJAXView> customerViews;
+    public List<CustomerView> customerViews;
 }

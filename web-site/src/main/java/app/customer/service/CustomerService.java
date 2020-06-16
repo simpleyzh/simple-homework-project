@@ -2,12 +2,11 @@ package app.customer.service;
 
 import app.customer.api.CreateCustomerAJAXRequest;
 import app.customer.api.CreateCustomerRequest;
-import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
 import app.customer.api.SearchCustomerRequest;
 import app.customer.api.SearchCustomerResponse;
 import app.customer.api.UpdateCustomerRequest;
-import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerView;
 import app.customer.api.SearchCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXResponse;
 import app.customer.api.UpdateCustomerAJAXRequest;
@@ -19,7 +18,7 @@ public class CustomerService {
     @Inject
     CustomerWebService customerWebService;
 
-    public void deleter(String id) {
+    public void delete(String id) {
         customerWebService.delete(id);
     }
 
@@ -28,11 +27,11 @@ public class CustomerService {
         customer.name = request.name;
         customer.age = request.age;
         customer.email = request.email;
-        customer.sex = CreateCustomerRequest.Sex.valueOf(request.sex.name());
+        customer.gender = CreateCustomerRequest.Gender.valueOf(request.gender.name());
         customerWebService.create(customer);
     }
 
-    public CustomerAJAXView get(String id) {
+    public CustomerView get(String id) {
         CustomerView customer = customerWebService.get(id);
         return view(customer);
     }
@@ -53,12 +52,12 @@ public class CustomerService {
         customerWebService.update(id, updateCustomerRequest);
     }
 
-    private CustomerAJAXView view(CustomerView customer) {
-        CustomerAJAXView view = new CustomerAJAXView();
+    private CustomerView view(CustomerView customer) {
+        CustomerView view = new CustomerView();
         view.id = customer.id;
         view.name = customer.name;
         view.age = customer.age;
-        view.sex = CustomerAJAXView.Sex.valueOf(customer.sex.name());
+        view.gender = CustomerView.Gender.valueOf(customer.gender.name());
         view.email = customer.email;
         return view;
     }

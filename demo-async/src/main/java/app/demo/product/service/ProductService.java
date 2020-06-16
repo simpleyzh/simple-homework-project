@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 public class ProductService {
     @Inject
     MessagePublisher<CreatedProductMessage> publish;
-
     @Inject
     MessagePublisher<UpdateProductMessage> updatePublisher;
 

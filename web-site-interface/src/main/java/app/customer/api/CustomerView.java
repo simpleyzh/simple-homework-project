@@ -7,7 +7,7 @@ import core.framework.api.validate.NotNull;
 /**
  * @Author simple
  */
-public class CustomerAJAXView {
+public class CustomerView {
     @NotBlank
     @NotNull
     @Property(name = "id")
@@ -28,13 +28,13 @@ public class CustomerAJAXView {
     public String email;
 
     @NotNull
-    @Property(name = "sex")
-    public Sex sex;
+    @Property(name = "gender")
+    public Gender gender;
 
-    public enum Sex {
-        @Property(name = "male")
-        MAN,
-        @Property(name = "female")
-        WOMAN
+    public enum  Gender {
+        @Property(name = "MALE")
+        MALE,
+        @Property(name = "FEMALE")
+        FEMALE
     }
 }

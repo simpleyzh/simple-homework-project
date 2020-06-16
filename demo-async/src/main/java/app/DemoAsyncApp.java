@@ -11,8 +11,8 @@ public class DemoAsyncApp extends App {
     protected void initialize() {
         http().httpPort(8080);
         load(new SystemModule("sys.properties"));
-//        load(new JobModule());
-//        load(new ExecutorModule());
+        load(new JobModule());
+        load(new ExecutorModule());
         load(new ProductModule());
         load(new CustomerModule());
     }

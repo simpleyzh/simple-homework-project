@@ -18,7 +18,7 @@ public interface CustomerAJAXWebService {
 
     @GET
     @Path("/ajax/customer/:id")
-    CustomerAJAXView get(@PathParam("id") String id);
+    CustomerView get(@PathParam("id") String id);
 
     @PUT
     @Path("/ajax/customer")

@@ -12,13 +12,12 @@ import java.time.LocalDateTime;
  */
 public class PrintTime {
     private final Logger logger = LoggerFactory.getLogger(PrintTime.class);
-
     @Inject
     Executor executor;
 
     public void print() {
         executor.submit("print-current-time", () -> {
-            logger.info("time is {}", LocalDateTime.now());
+            logger.info("time={}", LocalDateTime.now());
         });
     }
 }

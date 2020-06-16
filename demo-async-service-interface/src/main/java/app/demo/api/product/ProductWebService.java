@@ -13,17 +13,17 @@ import core.framework.api.web.service.PathParam;
 public interface ProductWebService {
     @POST
     @Path("/product")
-    void createProduct(CreateProductRequest request);
+    void create(CreateProductRequest request);
 
     @GET
     @Path("/product/:id")
-    ProductView getProduct(@PathParam("id")String id);
+    ProductView get(@PathParam("id")String id);
 
     @DELETE
     @Path("/product/:id")
-    void delProduct(@PathParam("id")String id);
+    void delete(@PathParam("id")String id);
 
     @PUT
     @Path("/product/:id")
-    void updProduct(@PathParam("id")String id, UpdateProductRequest request);
+    void update(@PathParam("id")String id, UpdateProductRequest request);
 }

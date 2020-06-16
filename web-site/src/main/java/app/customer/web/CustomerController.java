@@ -1,8 +1,7 @@
 package app.customer.web;
 
-import app.customer.api.CustomerView;
 import app.customer.api.CustomerWebService;
-import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
 import core.framework.json.JSON;
 import core.framework.web.Request;
@@ -19,11 +18,11 @@ public class CustomerController {
         return Response.text(JSON.toJSON(view(service.get(request.pathParam("id")))));
     }
 
-    private CustomerAJAXView view(CustomerView view) {
-        CustomerAJAXView result = new CustomerAJAXView();
+    private CustomerView view(CustomerView view) {
+        CustomerView result = new CustomerView();
         result.id = view.id;
         result.name = view.name;
-        result.sex = CustomerAJAXView.Sex.valueOf(view.sex.name());
+        result.gender = CustomerView.Gender.valueOf(view.gender.name());
         result.email = view.email;
         result.age = view.age;
         return result;

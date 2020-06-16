@@ -14,6 +14,6 @@ public class PrintJob implements Job {
 
     @Override
     public void execute(JobContext context) {
-        logger.info("Job is run,name is {}, time is {}", context.name, context.scheduledTime);
+        logger.info("Job is run,name={}, time={}", context.name, context.scheduledTime);
     }
 }

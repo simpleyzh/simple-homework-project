@@ -5,6 +5,7 @@ import core.framework.api.validate.NotNull;
 import core.framework.mongo.Collection;
 import core.framework.mongo.Field;
 import core.framework.mongo.Id;
+import core.framework.mongo.MongoEnumValue;
 
 import java.time.LocalDateTime;
 
@@ -16,7 +17,7 @@ public class Production {
     @Id
     public String id;
 
-    @NotBlank
+    @NotNull
     @Field(name = "status")
     public Status status;
 
@@ -37,4 +38,12 @@ public class Production {
     @NotNull
     @Field(name = "created_By")
     public String createdBy;
+
+    public enum Status {
+        @MongoEnumValue("ACTIVE")
+        ACTIVE,
+
+        @MongoEnumValue("INACTIVE")
+        INACTIVE
+    }
 }

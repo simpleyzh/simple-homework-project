@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 /**
  * @author simple
  */
-public class CreatedProductMessageHandler implements MessageHandler<CreatedProductMessage> {
-    private final Logger logger = LoggerFactory.getLogger(CreatedProductMessageHandler.class);
+public class ProductCreatedMessageHandler implements MessageHandler<CreatedProductMessage> {
+    private final Logger logger = LoggerFactory.getLogger(ProductCreatedMessageHandler.class);
 
     @Override
     public void handle(String key, CreatedProductMessage value) {

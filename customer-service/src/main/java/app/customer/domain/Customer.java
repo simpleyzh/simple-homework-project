@@ -1,5 +1,6 @@
 package app.customer.domain;
 
+import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 import core.framework.db.Column;
@@ -28,17 +29,17 @@ public class Customer {
     public String email;
 
     @NotNull
-    @Column(name = "sex")
-    public Sex sex;
-
-    @NotNull
     @Column(name = "age")
     public Integer age;
 
-    public enum Sex {
-        @DBEnumValue("男")
-        MAN,
-        @DBEnumValue("女")
-        WOMAN
+    @NotNull
+    @Property(name = "gender")
+    public Gender gender;
+
+    public enum Gender {
+        @Property(name = "MALE")
+        MALE,
+        @Property(name = "FEMALE")
+        FEMALE
     }
 }

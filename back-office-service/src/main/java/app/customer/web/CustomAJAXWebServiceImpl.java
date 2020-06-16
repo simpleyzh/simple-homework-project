@@ -3,7 +3,7 @@ package app.customer.web;
 
 
 import app.customer.api.CreateCustomerAJAXRequest;
-import app.customer.api.CustomerAJAXView;
+import app.customer.api.CustomerView;
 import app.customer.api.CustomerAJAXWebService;
 import app.customer.api.SearchCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXResponse;
@@ -26,7 +26,7 @@ public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
     }
 
     @Override
-    public CustomerAJAXView get(String id) {
+    public CustomerView get(String id) {
         return service.get(id);
     }
 

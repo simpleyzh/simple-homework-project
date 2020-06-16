@@ -14,9 +14,9 @@ public class MysqlModule extends Module {
         bind(ProductionService.class);
 
         ProductionService service = bean(ProductionService.class);
-//        service.insert();
+        service.insert();
         service.query();
-//        service.update();
-//        service.partialUpdate();
+        service.update();
+        service.partialUpdate();
     }
 }
