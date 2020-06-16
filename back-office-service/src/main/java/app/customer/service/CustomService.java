@@ -14,6 +14,8 @@ import app.customer.api.CustomerSexView;
 import app.customer.api.CustomerView;
 import core.framework.inject.Inject;
 
+import java.util.stream.Collectors;
+
 /**
  * @author simple
  */
@@ -47,9 +49,7 @@ public class CustomService {
         view.name = request.name;
         BOSearchCustomerResponse result = customerWebService.searchCustomer(view);
         SearchCustomerAJAXResponse response = new SearchCustomerAJAXResponse();
-        for (CustomerView c : result.customerViews) {
-            response.customerViews.add(view(c));
-        }
+        response.customerViews = result.customerViews.stream().map(this::view).collect(Collectors.toList());
         return response;
     }
 

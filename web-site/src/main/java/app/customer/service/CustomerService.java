@@ -13,6 +13,8 @@ import app.customer.api.SearchCustomerAJAXResponse;
 import app.customer.api.UpdateCustomerAJAXRequest;
 import core.framework.inject.Inject;
 
+import java.util.stream.Collectors;
+
 public class CustomerService {
     @Inject
     CustomerWebService customerWebService;
@@ -41,9 +43,7 @@ public class CustomerService {
         request.name = req.name;
         SearchCustomerResponse apiResponse = customerWebService.searchCustomer(request);
         SearchCustomerAJAXResponse response = new SearchCustomerAJAXResponse();
-        for (CustomerView c : apiResponse.customerViews) {
-            response.list.add(view(c));
-        }
+        response.list = apiResponse.customerViews.stream().map(this::view).collect(Collectors.toList());
         return response;
     }
 
