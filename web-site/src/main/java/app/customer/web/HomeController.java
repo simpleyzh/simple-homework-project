@@ -10,7 +10,7 @@ import core.framework.web.Response;
 /**
  * @author simple
  */
-public class CustomerController {
+public class HomeController {
     @Inject
     CustomerWebService service;
 
