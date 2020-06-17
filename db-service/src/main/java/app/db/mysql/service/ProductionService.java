@@ -6,18 +6,13 @@ import core.framework.db.Database;
 import core.framework.db.Repository;
 import core.framework.db.Transaction;
 import core.framework.inject.Inject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.UUID;
 
 /**
  * @author simple
  */
 public class ProductionService {
-    private final Logger logger = LoggerFactory.getLogger(ProductionService.class);
     @Inject
     Repository<Production> repository;
     @Inject
@@ -31,7 +26,7 @@ public class ProductionService {
         production.createdTime = LocalDateTime.now();
         production.createdBy = "ProductionService";
         production.updateTime = LocalDateTime.now();
-        production.updateBy = "";
+        production.updateBy = "ProductionService";
         repository.insert(production);
     }
 
@@ -59,8 +54,8 @@ public class ProductionService {
     }
 
     public void query() {
-        Optional<Production> production = repository.selectOne("id = ?", "6c53152f-4eda-42f6-b584-ec3469e144e2");
-        logger.info(String.valueOf(production.stream().iterator().next()));
+        repository.selectOne("id = ?", "6c53152f-4eda-42f6-b584-ec3469e144e2");
+//        logger.info(String.valueOf(production.stream().iterator().next()));
     }
 
     public void replace() {
@@ -71,7 +66,7 @@ public class ProductionService {
         try (Transaction transaction = database.beginTransaction()) {
             int flag = 0;
             for (int i = 0; i < 5; i++) {
-                insert();
+//                insert();
 //                repository.batchInsert();
                 flag = 1;
             }

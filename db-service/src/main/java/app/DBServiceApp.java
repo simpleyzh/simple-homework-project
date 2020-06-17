@@ -13,5 +13,6 @@ public class DBServiceApp extends App {
         loadProperties("app.properties");
         load(new MongoModule());
         load(new MysqlModule());
+
     }
 }

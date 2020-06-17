@@ -25,6 +25,7 @@ subprojects {
 }
 
 def coreNGVersion = '7.4.1'
+def hsqlVersion = '2.5.0'
 def mysqlVersion = '8.0.20'
 
 
@@ -59,6 +60,7 @@ configure ([project(':customer-service'),
 //    apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         runtimeOnly "mysql:mysql-connector-java:${mysqlVersion}"
+        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }
 }
 

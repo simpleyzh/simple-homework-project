@@ -2,12 +2,11 @@ package app.db.mysql.domain;
 
 
 
-import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 import core.framework.db.Column;
+import core.framework.db.DBEnumValue;
 import core.framework.db.PrimaryKey;
 import core.framework.db.Table;
-import core.framework.mongo.MongoEnumValue;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +19,7 @@ public class Production {
     @Column(name = "id")
     public String id;
 
-    @NotBlank
+    @NotNull
     @Column(name = "status")
     public Status status;
 
@@ -43,10 +42,10 @@ public class Production {
     public String createdBy;
 
     public enum Status {
-        @MongoEnumValue("ACTIVE")
+        @DBEnumValue("ACTIVE")
         ACTIVE,
 
-        @MongoEnumValue("INACTIVE")
+        @DBEnumValue("INACTIVE")
         INACTIVE
     }
 }
