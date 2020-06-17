@@ -6,6 +6,7 @@ import app.demo.api.product.ProductWebService;
 import app.demo.api.product.UpdateProductRequest;
 import app.demo.product.service.ProductService;
 import core.framework.inject.Inject;
+import core.framework.log.ActionLogContext;
 
 /**
  * @author simple
@@ -16,6 +17,7 @@ public class ProductWebServiceImpl implements ProductWebService {
 
     @Override
     public void create(CreateProductRequest request) {
+        ActionLogContext.put("productId",request.id);
         service.create(request);
     }
 

@@ -22,6 +22,7 @@ public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
     
     @Override
     public void create(CreateCustomerAJAXRequest request) {
+        ActionLogContext.put("customerEmail",request.email);
         service.create(request);
     }
 
@@ -46,5 +47,4 @@ public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
         ActionLogContext.put("customerId", id);
         service.delete(id);
     }
-    
 }
