@@ -55,4 +55,8 @@ public class ProductionService {
         production.updateTime = LocalDateTime.now();
         mongo.replace(production);
     }
+
+    public Integer ten() {
+        return 10;
+    }
 }

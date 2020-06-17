@@ -17,7 +17,7 @@ public class ProductWebServiceImpl implements ProductWebService {
 
     @Override
     public void create(CreateProductRequest request) {
-        ActionLogContext.put("productId",request.id);
+        ActionLogContext.put("productId", request.id);
         service.create(request);
     }
 

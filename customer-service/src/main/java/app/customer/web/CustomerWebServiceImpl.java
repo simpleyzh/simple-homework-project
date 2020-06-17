@@ -8,6 +8,7 @@ import app.customer.api.SearchCustomerResponse;
 import app.customer.api.UpdateCustomerRequest;
 import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
+import core.framework.internal.web.service.ErrorResponse;
 import core.framework.log.ActionLogContext;
 
 /**
@@ -19,7 +20,7 @@ public class CustomerWebServiceImpl implements CustomerWebService {
 
     @Override
     public void create(CreateCustomerRequest request) {
-        ActionLogContext.put("customerEmail",request.email);
+        ActionLogContext.put("customerEmail", request.email);
         service.create(request);
     }
 
@@ -45,5 +46,10 @@ public class CustomerWebServiceImpl implements CustomerWebService {
         service.delete(id);
     }
 
-
+    @Override
+    public ErrorResponse error() {
+        ErrorResponse response = new ErrorResponse();
+        response.errorCode = "Error_Code";
+        return response;
+    }
 }

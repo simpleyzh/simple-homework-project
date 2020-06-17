@@ -1,7 +1,6 @@
 package app;
 
 import core.framework.module.App;
-import core.framework.module.SystemModule;
 
 /**
  * @author simple

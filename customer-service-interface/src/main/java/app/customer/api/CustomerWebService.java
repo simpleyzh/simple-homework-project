@@ -6,6 +6,7 @@ import core.framework.api.web.service.POST;
 import core.framework.api.web.service.PUT;
 import core.framework.api.web.service.Path;
 import core.framework.api.web.service.PathParam;
+import core.framework.internal.web.service.ErrorResponse;
 
 /**
  * @author simple
@@ -30,4 +31,8 @@ public interface CustomerWebService {
     @DELETE
     @Path("/customer/:id")
     void delete(@PathParam("id") String id);
+
+    @GET
+    @Path("/customer/error")
+    ErrorResponse error();
 }

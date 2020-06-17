@@ -1,6 +1,5 @@
 package app.customer.domain;
 
-import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 import core.framework.db.Column;
@@ -33,7 +32,7 @@ public class Customer {
     public Integer age;
 
     @NotNull
-    @Property(name = "gender")
+    @Column(name = "gender")
     public Gender gender;
 
     public enum Gender {

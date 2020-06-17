@@ -11,12 +11,17 @@ import app.customer.api.SearchCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXResponse;
 import app.customer.api.UpdateCustomerAJAXRequest;
 import core.framework.inject.Inject;
+import core.framework.internal.web.service.ErrorResponse;
 
 import java.util.stream.Collectors;
 
 public class CustomerService {
     @Inject
     CustomerWebService customerWebService;
+
+    public ErrorResponse error() {
+        return customerWebService.error();
+    }
 
     public void delete(String id) {
         customerWebService.delete(id);

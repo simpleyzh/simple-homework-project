@@ -11,5 +11,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @Context(module = TestModule.class)
 public class IntegrationTest {
     protected IntegrationTest() {
+
     }
 }
