@@ -10,6 +10,7 @@ import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
 import core.framework.internal.web.service.ErrorResponse;
 import core.framework.log.ActionLogContext;
+import core.framework.web.exception.NotFoundException;
 
 /**
  * @author simple
@@ -48,8 +49,6 @@ public class CustomerWebServiceImpl implements CustomerWebService {
 
     @Override
     public ErrorResponse error() {
-        ErrorResponse response = new ErrorResponse();
-        response.errorCode = "Error_Code";
-        return response;
+        throw new NotFoundException("CustomerId not found");
     }
 }
