@@ -1,9 +1,5 @@
 package app.customer.web;
 
-import app.customer.api.CustomerWebService;
-import app.customer.api.CustomerView;
-import core.framework.inject.Inject;
-import core.framework.json.JSON;
 import core.framework.web.Request;
 import core.framework.web.Response;
 
