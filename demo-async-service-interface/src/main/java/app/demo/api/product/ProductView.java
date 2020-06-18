@@ -25,7 +25,6 @@ public class ProductView {
     @Property(name = "desc")
     public String desc;
 
-    @NotBlank
     @NotNull
     @Property(name = "created_time")
     public LocalDateTime createdTime;

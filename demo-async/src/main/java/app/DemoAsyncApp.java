@@ -9,7 +9,7 @@ import core.framework.module.SystemModule;
 public class DemoAsyncApp extends App {
     @Override
     protected void initialize() {
-        http().httpPort(8080);
+        http().httpPort(8088);
         load(new SystemModule("sys.properties"));
         load(new JobModule());
         load(new ExecutorModule());
