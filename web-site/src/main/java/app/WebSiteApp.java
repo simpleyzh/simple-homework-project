@@ -13,8 +13,8 @@ public class WebSiteApp extends App {
         http().httpPort(8082);
         http().intercept(bind(CustomerInterceptor.class));
 
-        load(new SystemModule("sys.properties"));
+//        load(new SystemModule("sys.properties"));
+        loadProperties("app.properties");
         load(new CustomerModule());
-
     }
 }

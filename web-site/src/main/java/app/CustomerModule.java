@@ -16,8 +16,8 @@ public class CustomerModule extends Module {
     @Override
     protected void initialize() {
         HomeController controller = bind(HomeController.class);
-        http().route(GET, "/customer/:id", controller::get);
-        api().client(CustomerWebService.class, requiredProperty("app.customer.serviceURI"));
+        http().route(GET, "/home", controller::get);
+        api().client(CustomerWebService.class, requiredProperty("app.customer.serviceURL"));
         bind(CustomerService.class);
         api().service(CustomerAJAXWebService.class, bind(CustomerAJAXWebServiceImpl.class));
     }

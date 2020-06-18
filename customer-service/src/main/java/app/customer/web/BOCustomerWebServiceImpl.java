@@ -19,7 +19,7 @@ public class BOCustomerWebServiceImpl implements BOCustomerWebService {
 
     @Override
     public void create(BOCreateCustomerRequest request) {
-        ActionLogContext.put("customerEmail", request.email);
+        ActionLogContext.put("email", request.email);
         service.create(request);
     }
 

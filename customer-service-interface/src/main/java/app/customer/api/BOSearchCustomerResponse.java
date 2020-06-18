@@ -8,6 +8,6 @@ import java.util.List;
  * @author simple
  */
 public class BOSearchCustomerResponse {
-    @Property(name = "views")
+    @Property(name = "customers")
     public List<CustomerView> customerViews;
 }

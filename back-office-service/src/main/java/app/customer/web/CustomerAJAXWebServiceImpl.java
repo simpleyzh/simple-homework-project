@@ -16,13 +16,13 @@ import core.framework.log.ActionLogContext;
 /**
  * @author simple
  */
-public class CustomAJAXWebServiceImpl implements CustomerAJAXWebService {
+public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     @Inject
     CustomService service;
     
     @Override
     public void create(CreateCustomerAJAXRequest request) {
-        ActionLogContext.put("customerEmail", request.email);
+        ActionLogContext.put("email", request.email);
         service.create(request);
     }
 

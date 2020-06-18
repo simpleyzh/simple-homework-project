@@ -8,6 +8,6 @@ import java.util.List;
  * @author simple
  */
 public class SearchCustomerAJAXResponse {
-    @Property(name = "list")
+    @Property(name = "customers")
     public List<CustomerView> list;
 }

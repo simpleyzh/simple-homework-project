@@ -18,7 +18,7 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
 
     @Override
     public void create(CreateCustomerAJAXRequest request) {
-        ActionLogContext.put("customerEmail", request.email);
+        ActionLogContext.put("email", request.email);
         service.create(request);
     }
 

@@ -21,7 +21,7 @@ public class CustomerWebServiceImpl implements CustomerWebService {
 
     @Override
     public void create(CreateCustomerRequest request) {
-        ActionLogContext.put("customerEmail", request.email);
+        ActionLogContext.put("email", request.email);
         service.create(request);
     }
 

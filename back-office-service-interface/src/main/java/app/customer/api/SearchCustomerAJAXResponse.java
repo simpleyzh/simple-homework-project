@@ -5,6 +5,6 @@ import core.framework.api.json.Property;
 import java.util.List;
 
 public class SearchCustomerAJAXResponse {
-    @Property(name = "views")
+    @Property(name = "customers")
     public List<CustomerView> customerViews;
 }
