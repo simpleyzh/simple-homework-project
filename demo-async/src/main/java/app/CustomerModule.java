@@ -1,6 +1,6 @@
 package app;
 
-import app.demo.api.product.kafka.CreatedProductMessage;
+import app.demo.api.product.kafka.ProductCreatedMessage;
 import app.demo.customer.kafka.ProductCreatedMessageHandler;
 import core.framework.module.Module;
 
@@ -10,6 +10,6 @@ import core.framework.module.Module;
 public class CustomerModule extends Module {
     @Override
     protected void initialize() {
-        kafka().subscribe("product-created", CreatedProductMessage.class, bind(ProductCreatedMessageHandler.class));
+        kafka().subscribe("product-created", ProductCreatedMessage.class, bind(ProductCreatedMessageHandler.class));
     }
 }

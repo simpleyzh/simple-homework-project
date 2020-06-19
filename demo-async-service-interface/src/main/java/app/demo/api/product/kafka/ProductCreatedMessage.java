@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 /**
  * @author simple
  */
-public class CreatedProductMessage {
+public class ProductCreatedMessage {
     @NotBlank
     @NotNull
     @Property(name = "id")

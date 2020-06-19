@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `productions` (
   `created_by`   VARCHAR(50)                 NOT NULL,
   `updated_by`   VARCHAR(50),
   PRIMARY KEY (`id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '产品信息表';
+)ENGINE=InnoDB;

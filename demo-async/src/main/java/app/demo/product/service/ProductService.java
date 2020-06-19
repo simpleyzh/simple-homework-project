@@ -3,8 +3,8 @@ package app.demo.product.service;
 import app.demo.api.product.CreateProductRequest;
 import app.demo.api.product.ProductView;
 import app.demo.api.product.UpdateProductRequest;
-import app.demo.api.product.kafka.CreatedProductMessage;
-import app.demo.api.product.kafka.UpdateProductMessage;
+import app.demo.api.product.kafka.ProductCreatedMessage;
+import app.demo.api.product.kafka.ProductUpdatedMessage;
 import core.framework.inject.Inject;
 import core.framework.kafka.MessagePublisher;
 
@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
  */
 public class ProductService {
     @Inject
-    MessagePublisher<CreatedProductMessage> publish;
+    MessagePublisher<ProductCreatedMessage> publish;
     @Inject
-    MessagePublisher<UpdateProductMessage> updatePublisher;
+    MessagePublisher<ProductUpdatedMessage> updatePublisher;
 
     public void create(CreateProductRequest request) {
-        CreatedProductMessage message = new CreatedProductMessage();
+        ProductCreatedMessage message = new ProductCreatedMessage();
         message.id = request.id;
         message.desc = request.desc;
         message.name = request.name;
@@ -30,7 +30,7 @@ public class ProductService {
     }
 
     public void update(String id, UpdateProductRequest request) {
-        UpdateProductMessage message = new UpdateProductMessage();
+        ProductUpdatedMessage message = new ProductUpdatedMessage();
         message.id = id;
         message.desc = request.desc;
         message.name = request.name;

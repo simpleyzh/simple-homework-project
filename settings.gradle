@@ -11,4 +11,6 @@ include 'back-office-service',
         'demo-service',
         'web-site',
         'web-site-interface'
+include 'cd-db-migration'
+include 'cd-mongo-migration'
 

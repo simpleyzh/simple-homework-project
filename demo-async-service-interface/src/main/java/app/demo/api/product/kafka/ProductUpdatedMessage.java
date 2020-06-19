@@ -7,7 +7,7 @@ import core.framework.api.validate.NotNull;
 /**
  * @author simple
  */
-public class UpdateProductMessage {
+public class ProductUpdatedMessage {
     @NotBlank
     @NotNull
     @Property(name = "id")
