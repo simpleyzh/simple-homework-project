@@ -1,5 +1,7 @@
 include 'back-office-service',
         'back-office-service-interface',
+        'cd-db-migration',
+        'cd-mongo-migration',
         'customer-service',
         'customer-service-db-migration',
         'customer-service-interface',
@@ -11,6 +13,4 @@ include 'back-office-service',
         'demo-service',
         'web-site',
         'web-site-interface'
-include 'cd-db-migration'
-include 'cd-mongo-migration'
 

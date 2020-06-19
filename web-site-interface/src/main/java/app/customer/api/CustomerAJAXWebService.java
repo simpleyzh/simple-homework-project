@@ -12,7 +12,6 @@ import core.framework.internal.web.service.ErrorResponse;
  * @author simple
  */
 public interface CustomerAJAXWebService {
-
     @POST
     @Path("/ajax/customer")
     void create(CreateCustomerAJAXRequest request);
@@ -32,8 +31,4 @@ public interface CustomerAJAXWebService {
     @DELETE
     @Path("/ajax/customer/:id")
     void delete(@PathParam("id") String id);
-
-    @GET
-    @Path("/ajax/customer/error")
-    ErrorResponse error();
 }

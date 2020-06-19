@@ -37,7 +37,7 @@ public class ProductionService {
     public void update() {
         mongo.update(Filters.eq("_id", "9ba13744-7e01-4ca2-9ebd-da983c5ac8ed"),
             Updates.combine(Updates.set("price", 233333d),
-                Updates.set("status", "yes")));
+                Updates.set("status", Production.Status.ACTIVE)));
     }
 
     public void query() {

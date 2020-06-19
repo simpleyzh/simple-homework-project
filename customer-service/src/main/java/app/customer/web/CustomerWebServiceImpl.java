@@ -8,9 +8,7 @@ import app.customer.api.SearchCustomerResponse;
 import app.customer.api.UpdateCustomerRequest;
 import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
-import core.framework.internal.web.service.ErrorResponse;
 import core.framework.log.ActionLogContext;
-import core.framework.web.exception.NotFoundException;
 
 /**
  * @author simple
@@ -45,10 +43,5 @@ public class CustomerWebServiceImpl implements CustomerWebService {
     public void delete(String id) {
         ActionLogContext.put("customerId", id);
         service.delete(id);
-    }
-
-    @Override
-    public ErrorResponse error() {
-        throw new NotFoundException("CustomerId not found");
     }
 }

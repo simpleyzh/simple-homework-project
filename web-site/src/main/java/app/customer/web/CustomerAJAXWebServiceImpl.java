@@ -9,7 +9,6 @@ import app.customer.api.SearchCustomerAJAXRequest;
 import app.customer.api.SearchCustomerAJAXResponse;
 import app.customer.service.CustomerService;
 import core.framework.inject.Inject;
-import core.framework.internal.web.service.ErrorResponse;
 import core.framework.log.ActionLogContext;
 
 public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
@@ -42,10 +41,5 @@ public class CustomerAJAXWebServiceImpl implements CustomerAJAXWebService {
     public void delete(String id) {
         ActionLogContext.put("customerId", id);
         service.delete(id);
-    }
-
-    @Override
-    public ErrorResponse error() {
-        return service.error();
     }
 }

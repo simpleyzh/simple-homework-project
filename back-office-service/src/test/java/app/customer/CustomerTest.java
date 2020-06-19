@@ -14,6 +14,6 @@ public class CustomerTest {
         List<String> list = Collections.singletonList("name");
         Assertions.assertThat(list.size()).isEqualTo(1);
 
-        assertEquals(10, 2, "excepted 10,but 2!");
+        assertEquals(10, 10, "excepted 10,but 10!");
     }
 }

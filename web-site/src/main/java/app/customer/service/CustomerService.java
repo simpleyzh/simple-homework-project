@@ -19,10 +19,6 @@ public class CustomerService {
     @Inject
     CustomerWebService customerWebService;
 
-    public ErrorResponse error() {
-        return customerWebService.error();
-    }
-
     public void delete(String id) {
         customerWebService.delete(id);
     }
