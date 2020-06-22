@@ -47,7 +47,8 @@ configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
     }
 }
 
-configure(subprojects.findAll { it.name.matches('.*-service-interface') }) {
+configure([subprojects.findAll { it.name.matches('.*-service-interface') },
+           project(':web-site-interface')]) {
     dependencies {
         implementation "core.framework:core-ng-api:${coreNGVersion}"
         implementation "core.framework:core-ng:${coreNGVersion}"
@@ -102,13 +103,6 @@ project(':web-site') {
     dependencies {
         implementation project(':customer-service-interface')
         implementation project(':web-site-interface')
-    }
-}
-
-project(':web-site-interface') {
-    dependencies {
-        implementation "core.framework:core-ng-api:${coreNGVersion}"
-        implementation "core.framework:core-ng:${coreNGVersion}"
     }
 }
 

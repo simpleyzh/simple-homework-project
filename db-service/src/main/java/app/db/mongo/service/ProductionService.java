@@ -41,7 +41,7 @@ public class ProductionService {
     }
 
     public void query() {
-        logger.info(String.valueOf(mongo.findOne(new Document().append("status", "active"))));
+        logger.info(String.valueOf(mongo.findOne(new Document().append("price", 299))));
     }
 
     public void replace() {
